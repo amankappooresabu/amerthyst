@@ -7,17 +7,27 @@ function Crown() {
   const crownRef = useRef<any>(null);
   const { scene } = useGLTF('/crown.glb');
   
-  // Floating animation
+  // Floating animation and brighten the crown
   useFrame((state) => {
     if (crownRef.current) {
       crownRef.current.position.y = Math.sin(state.clock.elapsedTime * 0.6) * 0.2;
+      
+      // Make crown brighter by adjusting materials
+      crownRef.current.traverse((child: any) => {
+        if (child.isMesh) {
+          // Brighten the material
+          child.material.emissiveIntensity = 1.5; // Brightness boost
+          child.material.metalness = 0.8; // More reflective
+          child.material.roughness = 0.2; // Smoother/shinier
+        }
+      });
     }
   });
   
   return <primitive ref={crownRef} object={scene} scale={3} position={[0, 0.5, 0]} rotation={[0.2, -0.3, 0]} />;
 }
 
-export const Landing = () => {
+export default function Landing() {
   return (
     <div className="relative w-full h-screen overflow-hidden bg-black">
       {/* 3D Crown Canvas - Full Screen */}
@@ -26,11 +36,12 @@ export const Landing = () => {
           <Suspense fallback={null}>
             <PerspectiveCamera makeDefault position={[0, 0, 8]} />
             
-            {/* Lighting */}
-            <ambientLight intensity={0.4} />
-            <directionalLight position={[5, 5, 5]} intensity={1} color="#ffffff" />
-            <spotLight position={[-5, 5, 5]} intensity={0.6} color="#9333ea" />
-            <pointLight position={[0, -2, 3]} intensity={0.8} color="#a855f7" />
+            {/* Lighting - Brightened for visibility */}
+            <ambientLight intensity={1.2} />
+            <directionalLight position={[5, 5, 5]} intensity={2.5} color="#ffffff" />
+            <directionalLight position={[-5, 5, 5]} intensity={1.5} color="#ffffff" />
+            <spotLight position={[0, 8, 5]} intensity={2} color="#ffffff" />
+            <pointLight position={[0, -2, 3]} intensity={1.2} color="#a855f7" />
             
             {/* Crown Model */}
             <Crown />
@@ -58,4 +69,4 @@ export const Landing = () => {
       </div>
     </div>
   );
-};
+}

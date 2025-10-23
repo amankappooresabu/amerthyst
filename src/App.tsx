@@ -1,4 +1,4 @@
-import { Landing } from "./sections/Landing"
+import Landing from "./sections/Landing"
 import Navbar from "./sections/Navbar"
 
 
