@@ -1,42 +1,61 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 
 const Navbar = () => {
   const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
-
-  const navItems = ['About', 'Services', 'Portfolio', 'Team', 'Contact'];
+  const [visibleItems, setVisibleItems] = useState(0);
+  
+  const navItems = ['Home', 'About', 'Services', 'Portfolio', 'Team', 'Contact'];
+  
+  useEffect(() => {
+    // Reveal items one by one
+    const timers = navItems.map((_, index) => 
+      setTimeout(() => {
+        setVisibleItems(index + 1);
+      }, 300 + (index * 200)) // Each item appears 200ms apart
+    );
+    
+    return () => timers.forEach(timer => clearTimeout(timer));
+  }, []);
 
   return (
-    <nav 
-      className="fixed top-4 left-1/2 transform -translate-x-1/2 w-[95%] max-w-9xl z-50 px-8 py-4 rounded-2xl"
-      style={{
-        background: 'rgba(255, 255, 255, 0.08)',
-        backdropFilter: 'blur(24px) saturate(200%)',
-        WebkitBackdropFilter: 'blur(24px) saturate(200%)',
-        border: '1px solid rgba(255, 255, 255, 0.18)',
-        boxShadow: '0 8px 32px 0 rgba(0, 0, 0, 0.37), inset 0 1px 0 0 rgba(255, 255, 255, 0.1)',
-      }}
-    >
-      <div className="flex items-center justify-between">
-        {/* Logo/Brand */}
-        <div 
-          className="text-2xl font-light tracking-wider text-white cursor-pointer"
-          style={{ fontFamily: 'Helvetica Neue, Helvetica, Arial, sans-serif' }}
-        >
-          AMETHYST
-        </div>
+    <div className="fixed top-5 left-8 z-50 flex items-center gap-12">
+      {/* AMETHYST Logo */}
+      <div 
+        className="text-lg font-light tracking-wider text-white"
+        style={{ fontFamily: 'Helvetica Neue, Helvetica, Arial, sans-serif' }}
+      >
+        PURPLE SKY TRADE
+      </div>
 
-        {/* Navigation Items */}
-        <div className="flex items-center gap-[120px] ">
-          {navItems.map((item, index) => (
+      {/* Navbar - Expands as items appear */}
+      <div
+        className="px-8  transition-all duration-300 ease-out h-10"
+        style={{
+          background: visibleItems > 0 ? 'rgba(255, 255, 255, 0.05)' : 'transparent',
+          backdropFilter: visibleItems > 0 ? 'blur(24px) saturate(200%)' : 'none',
+          WebkitBackdropFilter: visibleItems > 0 ? 'blur(24px) saturate(200%)' : 'none',
+          border: 'none',
+          boxShadow: visibleItems > 0 ? '0 8px 32px 0 rgba(0, 0, 0, 0.37)' : 'none',
+          borderRadius: '4px',
+          width: 'fit-content',
+        }}
+      >
+        <div className="flex items-center gap-12 py-1.5">
+          {navItems.slice(0, visibleItems).map((item, index) => (
             <div
               key={item}
               className="relative"
               onMouseEnter={() => setHoveredIndex(index)}
               onMouseLeave={() => setHoveredIndex(null)}
+              style={{
+                animation: `slideIn 0.3s ease-out both`
+              }}
             >
               <a
                 href={`#${item.toLowerCase()}`}
-                className="text-white/80  font-light tracking-wide text-lg transition-colors duration-300 hover:text-white"
+                className={`font-light tracking-wide text-md transition-colors duration-300 whitespace-nowrap ${
+                  index === 0 ? 'text-white' : 'text-white/80 hover:text-white'
+                }`}
                 style={{ fontFamily: 'Helvetica Neue, Helvetica, Arial, sans-serif' }}
               >
                 {item}
@@ -53,18 +72,32 @@ const Navbar = () => {
                 />
               )}
               
-              {/* Purple underline on hover */}
+              {/* Purple underline on hover or active */}
               <div
-                className="absolute bottom-0 left-0 h-[2px] bg-linear-to-r from-purple-500 to-violet-500 transition-all duration-300"
+                className="absolute bottom-0 left-0 h-0.5 bg-linear-to-r from-purple-500 to-violet-500 transition-all duration-300"
                 style={{
-                  width: hoveredIndex === index ? '100%' : '0%',
+                  width: hoveredIndex === index || index === 0 ? '100%' : '0%',
                 }}
               />
             </div>
           ))}
         </div>
       </div>
-    </nav>
+
+      {/* CSS Animation */}
+      <style>{`
+        @keyframes slideIn {
+          from {
+            opacity: 0;
+            transform: translateX(-10px);
+          }
+          to {
+            opacity: 1;
+            transform: translateX(0);
+          }
+        }
+      `}</style>
+    </div>
   );
 };
 

@@ -96,7 +96,7 @@ function Crown() {
 
 export default function Landing() {
   return (
-    <div className="relative w-full h-screen overflow-hidden bg-black">
+    <div className="relative w-full h-screen overflow-hidden bg-black  " >
       {/* 3D Crown Canvas - Full Screen */}
       <div className="absolute top-0 left-0 w-full h-full">
         <Canvas>
