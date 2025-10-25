@@ -47,7 +47,7 @@ function Crown() {
       if (animationPhase === 'intro') {
         // INTRO PHASE: Fast rotation in center
         // ROTATION SPEED: delta * 2.5 (adjust multiplier for faster/slower)
-        crownRef.current.rotation.y += delta * 4;
+        crownRef.current.rotation.y += delta * 9;
         crownRef.current.position.set(0, floatY, 0);
         crownRef.current.scale.set(3, 3, 3); // Full size
         
@@ -73,7 +73,7 @@ function Crown() {
   const targetRotationZ = 0;
   
   // Interpolate factor increases as animation progresses
-  const lerpFactor = eased * 0.15; // Adjust 0.15 for faster/slower transition
+  const lerpFactor =  Math.pow(eased, 2) * 0.50; // Adjust 0.15 for faster/slower transition
   
   // Smoothly interpolate ALL rotation axes towards target
   crownRef.current.rotation.x += (targetRotationX - crownRef.current.rotation.x) * lerpFactor;
