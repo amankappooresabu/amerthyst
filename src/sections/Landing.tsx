@@ -47,7 +47,7 @@ function Crown() {
       if (animationPhase === 'intro') {
         // INTRO PHASE: Fast rotation in center
         // ROTATION SPEED: delta * 2.5 (adjust multiplier for faster/slower)
-        crownRef.current.rotation.y += delta * 9;
+        crownRef.current.rotation.y += delta * 14;
         crownRef.current.position.set(0, floatY, 0);
         crownRef.current.scale.set(3, 3, 3); // Full size
         
