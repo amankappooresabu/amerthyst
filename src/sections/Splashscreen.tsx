@@ -11,7 +11,7 @@ export default function SplashScreen() {
     >
       <video
         autoPlay
-        loop={false}  // Don't loop - play once
+        loop={false}  
         muted
         playsInline
         className="absolute top-0 left-0 ml-52 mt-20 w-[70%] h-[70%] object-cover"

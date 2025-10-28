@@ -147,16 +147,7 @@ export default function Landing() {
     backgroundPosition: 'center',
     backgroundRepeat: 'no-repeat'
   }}>
-     <video
-    autoPlay
-    loop
-    muted
-    playsInline
-    className="absolute top-0 left-0 w-full h-full object-cover"
-    style={{ zIndex: 0 }}
-  >
-    <source src="/video2.webm" type="video/mp4" />
-  </video>
+  
       {/* Title Background */}
       <div 
         className="absolute inset-0 flex items-center justify-center pointer-events-none select-none"

@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
-import Landing from "./sections/Landing"
 import Navbar from "./sections/Navbar"
 import SplashScreen from './sections/Splashscreen';
+import Landing from './sections/Landing';
 
 function App() {
   const [showSplash, setShowSplash] = useState(true);

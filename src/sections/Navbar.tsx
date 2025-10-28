@@ -33,7 +33,6 @@ const Navbar = () => {
         style={{
           background: visibleItems > 0 ? 'rgba(255, 255, 255, 0.05)' : 'transparent',
           backdropFilter: visibleItems > 0 ? 'blur(24px) saturate(200%)' : 'none',
-          WebkitBackdropFilter: visibleItems > 0 ? 'blur(24px) saturate(200%)' : 'none',
           border: 'none',
           boxShadow: visibleItems > 0 ? '0 8px 32px 0 rgba(0, 0, 0, 0.37)' : 'none',
           borderRadius: '4px',
