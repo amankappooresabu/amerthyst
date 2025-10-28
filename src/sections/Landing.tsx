@@ -1,7 +1,7 @@
 import { Suspense, useRef } from 'react';
 import { Canvas, useFrame } from '@react-three/fiber';
 import { useGLTF, OrbitControls, PerspectiveCamera, Center } from '@react-three/drei';
-import Herocard from './components/Herocard';
+import Herocard from './components/Herocard/Herocard';
 
 
 // 3D Crown Model Component
