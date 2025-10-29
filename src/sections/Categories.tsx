@@ -4,6 +4,7 @@ import { categories } from '../constants/Categorydata';
 
 export default function Categories() {
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
+  const [isVisible, setIsVisible] = useState(false);
   const sectionRef = useRef<HTMLDivElement>(null);
 
   // Track mouse position relative to the section
@@ -20,6 +21,30 @@ export default function Categories() {
 
     window.addEventListener('mousemove', handleMouseMove);
     return () => window.removeEventListener('mousemove', handleMouseMove);
+  }, []);
+
+  // Intersection Observer for scroll animations
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            setIsVisible(true);
+          }
+        });
+      },
+      { threshold: 0.1 }
+    );
+
+    if (sectionRef.current) {
+      observer.observe(sectionRef.current);
+    }
+
+    return () => {
+      if (sectionRef.current) {
+        observer.unobserve(sectionRef.current);
+      }
+    };
   }, []);
 
   // Split categories into rows
@@ -53,7 +78,24 @@ export default function Categories() {
   };
 
   return (
-    <div 
+    <>
+      <style>
+        {`
+          @keyframes fadeIn {
+            from {
+              opacity: 0;
+            }
+            to {
+              opacity: 1;
+            }
+          }
+          
+          .card-fade-in {
+            animation: fadeIn 0.6s ease forwards;
+          }
+        `}
+      </style>
+      <div 
       ref={sectionRef}
       className="bg-black text-amber-50 py-20 px-8 relative"
       style={{ minHeight: '100vh' }}
@@ -62,7 +104,7 @@ export default function Categories() {
       <div 
         className="absolute inset-0 pointer-events-none"
         style={{
-          background: `radial-gradient(300px circle at ${mousePosition.x}px ${mousePosition.y}px, transparent 0%, rgba(0, 0, 0, 0.82) 100%)`,
+          background: `radial-gradient(250px circle at ${mousePosition.x}px ${mousePosition.y}px, transparent 0%, rgba(0, 0, 0, 0.80) 180%)`,
           zIndex: 10
         }}
       />
@@ -70,7 +112,14 @@ export default function Categories() {
       {/* Content */}
       <div className="relative" style={{ zIndex: 5 }}>
         {/* Heading */}
-        <div className="text-center mb-16">
+        <div 
+          className="text-center mb-16"
+          style={{
+            opacity: isVisible ? 1 : 0,
+            transform: isVisible ? 'translateY(0)' : 'translateY(-30px)',
+            transition: 'opacity 0.8s ease, transform 0.8s ease'
+          }}
+        >
           <h2 
             className="text-5xl font-light tracking-wider text-white mb-4"
             style={{ fontFamily: 'Helvetica Neue, Helvetica, Arial, sans-serif' }}
@@ -97,11 +146,14 @@ export default function Categories() {
                     key={category.id}
                     onMouseEnter={() => setHoveredInRow(cardIndex)}
                     onMouseLeave={() => setHoveredInRow(null)}
+                    className={isVisible ? 'card-fade-in' : ''}
                     style={{
-                      transform: getCardTransform(rowCards, hoveredInRow),
-                      transition: 'transform 0.4s ease',
+                      transform: `${getCardTransform(rowCards, hoveredInRow)} ${isVisible ? 'translateY(0)' : 'translateY(40px)'}`,
+                      transition: 'transform 0.4s ease, opacity 0.6s ease',
                       marginRight: cardIndex < rowCards.length - 1 && rowCards.length > 2 ? '-70px' : '0',
-                      marginLeft: cardIndex > 0 && rowCards.length <= 2 ? '72px' : '0'
+                      marginLeft: cardIndex > 0 && rowCards.length <= 2 ? '72px' : '0',
+                      opacity: isVisible ? 1 : 0,
+                      transitionDelay: `${(rowIndex * 3 + cardIndex) * 0.1}s`
                     }}
                   >
                     <CategoryCard category={category} />
@@ -110,8 +162,10 @@ export default function Categories() {
               </div>
             );
           })}
+         
         </div>
       </div>
     </div>
+    </>
   );
 }
