@@ -3,6 +3,7 @@ import Navbar from "./sections/Navbar"
 import SplashScreen from './sections/Splashscreen';
 import Landing from './sections/Landing';
 import Categories from './sections/Categories';
+import Contact from './sections/Contact';
 
 function App() {
   const [showSplash, setShowSplash] = useState(true);
@@ -24,6 +25,7 @@ function App() {
       <Navbar/>
       <Landing/>
       <Categories/>
+      <Contact/>
     </>
   );
 }
