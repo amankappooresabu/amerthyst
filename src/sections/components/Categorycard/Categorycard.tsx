@@ -1,4 +1,4 @@
-import './CategoryCard.scss';
+import './Categorycard.scss';
 
 interface Category {
   id: number;
