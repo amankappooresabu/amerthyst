@@ -86,6 +86,14 @@ export default function Landing() {
           </Suspense>
         </Canvas>
       </div>
+      <div 
+        className="absolute bottom-0 left-0 w-full pointer-events-none"
+        style={{
+          height: '170px', // Adjust height for gradient spread
+          background: 'linear-gradient(to bottom, transparent 0%, rgba(0, 0, 0, 0.3) 30%, rgba(0, 0, 0, 0.8) 70%, #000000 100%)',
+          zIndex: 4
+        }}
+      />
     </div>
   );
 }
