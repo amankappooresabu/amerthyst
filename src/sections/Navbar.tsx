@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import { logos } from '../constants/logos';
+import MobileMenu from './components/MobileNav/mobilenav';
 
 // Logo navbar component (right side)
 const LogoNav = () => {
@@ -75,8 +76,19 @@ const LogoNav = () => {
 const Navbar = () => {
   const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
   const [visibleItems, setVisibleItems] = useState(0);
+  const [isMobile, setIsMobile] = useState(false);
   
-  const navItems = ['Home', 'About', 'Services', 'Portfolio', 'Team', 'Contact'];
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth < 1024);
+    };
+
+    handleResize();
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
+  
+  const navItems = ['Home', 'Categories', 'Contact'];
   
   useEffect(() => {
     // Reveal items one by one
@@ -92,7 +104,7 @@ const Navbar = () => {
   return (
     <>
       {/* Left Navbar */}
-      <div className="fixed top-5 left-8 z-50 flex items-center gap-12">
+      {!isMobile && ( <> <div className="fixed top-5 left-8 z-50 flex items-center gap-12">
         {/* PURPLE SKY TRADE Logo */}
         <div 
           className="text-lg font-light tracking-wider text-white"
@@ -159,7 +171,8 @@ const Navbar = () => {
       </div>
 
       {/* Right Logo Navbar */}
-      <LogoNav />
+      <LogoNav /> </>)}
+      {isMobile && <MobileMenu />}
 
       {/* CSS Animations */}
       <style>{`

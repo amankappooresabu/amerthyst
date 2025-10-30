@@ -10,7 +10,7 @@
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  @media (max-width: 1024px) {
+  @media (max-width: 1023px) {
     width: 70%;
     border-radius: 22px;
   }
