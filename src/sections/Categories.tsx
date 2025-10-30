@@ -5,7 +5,14 @@ import { categories } from '../constants/Categorydata';
 export default function Categories() {
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
   const [isVisible, setIsVisible] = useState(false);
+  const [windowWidth, setWindowWidth] = useState(typeof window !== 'undefined' ? window.innerWidth : 1200);
   const sectionRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const handleResize = () => setWindowWidth(window.innerWidth);
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
 
   // Track mouse position relative to the section
   useEffect(() => {
@@ -48,12 +55,34 @@ export default function Categories() {
   }, []);
 
   // Split categories into rows
-  const rows = [
-    categories.slice(0, 3),  // Row 1: 3 cards
-    categories.slice(3, 6),  // Row 2: 3 cards
-    categories.slice(6, 8)   // Row 3: 2 cards
-  ];
+   const getCardsPerRow = () => {
+    if (windowWidth < 600) return 1;
+    if (windowWidth < 900) return 2;
+    return 3;
+  };
 
+  const cardsPerRow = getCardsPerRow();
+
+  // Split categories into rows based on screen size
+  const getRows = () => {
+    const rows = [];
+    for (let i = 0; i < categories.length; i += cardsPerRow) {
+      rows.push(categories.slice(i, i + cardsPerRow));
+    }
+    return rows;
+  };
+
+  const rows = getRows();
+  const [hoveredCards, setHoveredCards] = useState<{[key: number]: number | null}>({});
+
+// Add these handler functions:
+const handleCardHover = (rowIndex: number, cardIndex: number) => {
+  setHoveredCards(prev => ({ ...prev, [rowIndex]: cardIndex }));
+};
+
+const handleCardLeave = (rowIndex: number) => {
+  setHoveredCards(prev => ({ ...prev, [rowIndex]: null }));
+};
   // Calculate transform for each card based on hover
   const getCardTransform = (rowCards: any[], hoveredInRow: number | null) => {
     // If row has 2 or fewer cards, no push effect
@@ -104,7 +133,7 @@ export default function Categories() {
       <div 
         className="absolute inset-0 pointer-events-none"
         style={{
-          background: `radial-gradient(250px circle at ${mousePosition.x}px ${mousePosition.y}px, transparent 0%, rgba(0, 0, 0, 0.80) 180%)`,
+          background: `radial-gradient(250px circle at ${mousePosition.x}px ${mousePosition.y}px, ${windowWidth >= 600 ? 'transparent 0%, rgba(0, 0, 0, 0.80) 180%' : ''})`,
           zIndex: 10
         }}
       />
@@ -136,32 +165,28 @@ export default function Categories() {
 
         {/* Cards Container */}
         <div className="overflow-hidden">
-          {rows.map((rowCards, rowIndex) => {
-            const [hoveredInRow, setHoveredInRow] = useState<number | null>(null);
-            
-            return (
-              <div key={rowIndex} className="flex justify-center mb-8 gap-25">
-                {rowCards.map((category, cardIndex) => (
-                  <div
-                    key={category.id}
-                    onMouseEnter={() => setHoveredInRow(cardIndex)}
-                    onMouseLeave={() => setHoveredInRow(null)}
-                    className={isVisible ? 'card-fade-in' : ''}
-                    style={{
-                      transform: `${getCardTransform(rowCards, hoveredInRow)} ${isVisible ? 'translateY(0)' : 'translateY(40px)'}`,
-                      transition: 'transform 0.4s ease, opacity 0.6s ease',
-                      marginRight: cardIndex < rowCards.length - 1 && rowCards.length > 2 ? '-70px' : '0',
-                      marginLeft: cardIndex > 0 && rowCards.length <= 2 ? '72px' : '0',
-                      opacity: isVisible ? 1 : 0,
-                      transitionDelay: `${(rowIndex * 3 + cardIndex) * 0.1}s`
-                    }}
-                  >
-                    <CategoryCard category={category} />
-                  </div>
-                ))}
-              </div>
-            );
-          })}
+          {rows.map((rowCards, rowIndex) => (
+  <div key={rowIndex} className="flex justify-center mb-8 lg:gap-25 md:gap-5 gap-10">
+    {rowCards.map((category, cardIndex) => (
+      <div
+        key={category.id}
+        onMouseEnter={() => handleCardHover(rowIndex, cardIndex)}  // ← Changed
+        onMouseLeave={() => handleCardLeave(rowIndex)}              // ← Changed
+        className={isVisible ? 'card-fade-in' : ''}
+        style={{
+          transform: `${getCardTransform(rowCards, hoveredCards[rowIndex])} ${isVisible ? 'translateY(0)' : 'translateY(40px)'}`,  // ← Changed
+          transition: 'transform 0.4s ease, opacity 0.6s ease',
+          marginRight: cardIndex < rowCards.length - 1 && rowCards.length > 2 ? '-70px' : '0',
+          marginLeft: cardIndex > 0 && rowCards.length <= 2 && windowWidth >= 768 ? '72px' : '0',
+          opacity: isVisible ? 1 : 0,
+          transitionDelay: `${(rowIndex * cardsPerRow + cardIndex) * 0.1}s`  // ← Also update this
+        }}
+      >
+        <CategoryCard category={category} />
+      </div>
+    ))}
+  </div>
+))}
          
         </div>
       </div>
