@@ -1,7 +1,7 @@
 export default function SplashScreen() {
   return (
     <div 
-      className="relative w-full h-screen overflow-hidden"
+      className="relative w-full h-screen overflow-hidden flex justify-center items-center"
       style={{
         backgroundImage: 'url(/bg6.jpg)',
         backgroundSize: 'cover',
@@ -14,7 +14,7 @@ export default function SplashScreen() {
         loop={false}  
         muted
         playsInline
-        className="absolute top-0 left-0 ml-52 mt-20 w-[70%] h-[70%] object-cover"
+        className="relative top-0 left-0  md:w-[70%] md:h-[70%]  object-cover"
         style={{ zIndex: 1 }}
       >
         <source src="/video2.webm" type="video/webm" />
