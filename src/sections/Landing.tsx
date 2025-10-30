@@ -66,7 +66,7 @@ export default function Landing() {
         backgroundRepeat: 'no-repeat'
       }}
     > <div className='flex flex-col lg:flex-row items-center relative w-full top-20 h-full'>
-        <div className="w-full flex justify-center items-center mt-25 lg:w-auto lg:mt-0 lg:absolute lg:left-20 lg:top-3/8  lg:-translate-y-1/2 lg:justify-start px-4 lg:px-0 pt-10 lg:pt-0" style={{ zIndex: 3 }}>
+        <div className="w-full flex justify-center items-center mt-25 lg:w-auto lg:mt-0 lg:absolute lg:left-20 lg:top-3/8  lg:-translate-y-1/2 lg:justify-start px-4 lg:px-0 pt-10 lg:pt-0" style={{ zIndex: 1 }}>
   <Herocard />
 </div>
       {/* 3D Crown Canvas - Position the container instead */}
