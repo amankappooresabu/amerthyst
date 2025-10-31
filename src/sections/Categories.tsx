@@ -124,11 +124,35 @@ const handleCardLeave = (rowIndex: number) => {
           }
         `}
       </style>
+      
+ 
       <div 
       ref={sectionRef}
-      className="bg-black text-amber-50 py-20 px-8 relative"
-      style={{ minHeight: '100vh' }}
-    >
+      className=" text-amber-50 py-20 px-8 relative"
+      style={{ minHeight: '100vh',
+        backgroundImage: 'url("/categorybg.jpg")',
+    backgroundSize: 'cover',
+    backgroundPosition: 'center',
+    backgroundAttachment: 'fixed', // Optional: parallax effect
+  }}
+>
+   <div 
+  className="absolute top-0 left-0 w-full pointer-events-none"
+  style={{
+    height: '170px',
+    background: 'linear-gradient(to bottom, #000000 0%, rgba(0, 0, 0, 0.8) 30%, rgba(0, 0, 0, 0.3) 70%, transparent 100%)',
+    zIndex: 11
+  }}
+/>
+  {/* Black overlay for brightness control */}
+  <div 
+    className="absolute inset-0" 
+    style={{ 
+      backgroundColor: 'rgba(0, 0, 0, 0.7)', // Adjust 0.7 for brightness (0 = bright, 1 = dark)
+      zIndex: 1 
+    }}
+  />
+    
       {/* Spotlight/Flashlight Effect - Dark overlay with circular light */}
       <div 
         className="absolute inset-0 pointer-events-none"
@@ -190,6 +214,14 @@ const handleCardLeave = (rowIndex: number) => {
          
         </div>
       </div>
+      <div 
+        className="absolute bottom-0 left-0 w-full pointer-events-none"
+        style={{
+          height: '170px', // Adjust height for gradient spread
+          background: 'linear-gradient(to bottom, transparent 0%, rgba(0, 0, 0, 0.3) 30%, rgba(0, 0, 0, 0.8) 70%, #000000 100%)',
+          zIndex: 4
+        }}
+      />
     </div>
     </>
   );
