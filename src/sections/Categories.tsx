@@ -127,6 +127,7 @@ const handleCardLeave = (rowIndex: number) => {
       
  
       <div 
+      id="categories"
       ref={sectionRef}
       className=" text-amber-50 py-20  relative"
       style={{ minHeight: '100vh',

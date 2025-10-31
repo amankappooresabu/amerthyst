@@ -77,7 +77,16 @@ const Navbar = () => {
   const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
   const [visibleItems, setVisibleItems] = useState(0);
   const [isMobile, setIsMobile] = useState(false);
-  
+  const handleNavClick = (e: React.MouseEvent<HTMLAnchorElement>, sectionId: string) => {
+  e.preventDefault();
+  const element = document.getElementById(sectionId.toLowerCase());
+  if (element) {
+    element.scrollIntoView({ 
+      behavior: 'smooth',
+      block: 'start'
+    });
+  }
+};
   useEffect(() => {
     const handleResize = () => {
       setIsMobile(window.innerWidth < 1024);
@@ -138,9 +147,8 @@ const Navbar = () => {
               >
                 <a
                   href={`#${item.toLowerCase()}`}
-                  className={`font-light tracking-wide text-md transition-colors duration-300 whitespace-nowrap ${
-                    index === 0 ? 'text-white' : 'text-white/80 hover:text-white'
-                  }`}
+                  onClick={(e) => handleNavClick(e, item.toLowerCase())}
+                  className={`font-light tracking-wide text-md transition-colors duration-300 whitespace-nowrap  text-white/80 hover:text-white`}
                   style={{ fontFamily: 'Helvetica Neue, Helvetica, Arial, sans-serif' }}
                 >
                   {item}
@@ -161,7 +169,7 @@ const Navbar = () => {
                 <div
                   className="absolute bottom-0 left-0 h-0.5 bg-linear-to-r from-purple-500 to-violet-500 transition-all duration-300"
                   style={{
-                    width: hoveredIndex === index || index === 0 ? '100%' : '0%',
+                    width: hoveredIndex === index ? '100%' : '0%',
                   }}
                 />
               </div>

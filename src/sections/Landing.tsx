@@ -58,6 +58,7 @@ export default function Landing() {
   }, []);
   return (
     <div 
+      id="home"
       className="relative w-full h-[1200px] lg:h-screen overflow-hidden"
       style={{
         backgroundImage: 'url(/bg6.jpg)',

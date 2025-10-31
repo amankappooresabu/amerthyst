@@ -1,6 +1,6 @@
 export default function Contact() {
     return (
-        <div className="relative bg-black text-white  py-1 px-6 pb-22 ">
+        <div id="contact" className="relative bg-black text-white  py-1 px-6 pb-22 ">
             <div className="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-2 px-5 h-[40%] rounded-2xl items-center"style={{ boxShadow: '0 0 20px rgba(255, 255, 255, 0.3), 0 0 40px rgba(255, 255, 255, 0.2), inset 0 0 20px rgba(255, 255, 255, 0.1)' }}>
                 
                 {/* Left Side Content */}
