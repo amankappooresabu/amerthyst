@@ -128,7 +128,7 @@ const handleCardLeave = (rowIndex: number) => {
  
       <div 
       ref={sectionRef}
-      className=" text-amber-50 py-20 px-8 relative"
+      className=" text-amber-50 py-20  relative"
       style={{ minHeight: '100vh',
         backgroundImage: 'url("/categorybg.jpg")',
     backgroundSize: 'cover',
@@ -190,7 +190,7 @@ const handleCardLeave = (rowIndex: number) => {
         {/* Cards Container */}
         <div className="overflow-hidden">
           {rows.map((rowCards, rowIndex) => (
-  <div key={rowIndex} className="flex justify-center mb-8 lg:gap-25 md:gap-5 gap-10">
+  <div key={rowIndex} className="flex justify-center mb-8 lg:gap-25 md:gap-25 gap-10">
     {rowCards.map((category, cardIndex) => (
       <div
         key={category.id}
@@ -200,8 +200,8 @@ const handleCardLeave = (rowIndex: number) => {
         style={{
           transform: `${getCardTransform(rowCards, hoveredCards[rowIndex])} ${isVisible ? 'translateY(0)' : 'translateY(40px)'}`,  // ← Changed
           transition: 'transform 0.4s ease, opacity 0.6s ease',
-          marginRight: cardIndex < rowCards.length - 1 && rowCards.length > 2 ? '-70px' : '0',
-          marginLeft: cardIndex > 0 && rowCards.length <= 2 && windowWidth >= 768 ? '72px' : '0',
+          marginRight: cardIndex < rowCards.length - 1 && rowCards.length > 2 ? '-90px' : '0',
+          marginLeft: cardIndex > 0 && rowCards.length <= 2 && windowWidth >= 768 ? '92px' : '0',
           opacity: isVisible ? 1 : 0,
           transitionDelay: `${(rowIndex * cardsPerRow + cardIndex) * 0.1}s`  // ← Also update this
         }}
