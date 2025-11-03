@@ -4,6 +4,7 @@ import SplashScreen from './sections/Splashscreen';
 import Landing from './sections/Landing';
 import Categories from './sections/Categories';
 import Contact from './sections/Contact';
+import Landing1 from './sections/Landing2.0';
 
 function App() {
   const [showSplash, setShowSplash] = useState(true);
@@ -23,7 +24,7 @@ function App() {
   return (
     <>
       <Navbar/>
-      <Landing/>
+      <Landing1/>
       <Categories/>
       <Contact/>
     </>
