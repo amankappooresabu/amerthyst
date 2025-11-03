@@ -1,7 +1,6 @@
 import { useState, useEffect } from 'react';
 import Navbar from "./sections/Navbar"
 import SplashScreen from './sections/Splashscreen';
-import Landing from './sections/Landing';
 import Categories from './sections/Categories';
 import Contact from './sections/Contact';
 import Landing1 from './sections/Landing2.0';
