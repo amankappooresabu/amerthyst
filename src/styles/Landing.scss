@@ -3,15 +3,19 @@
     width: 100%;
     height: 100vh;
     overflow: hidden;
-    background-color: #000; // Black background
+    background-image: url('/bg1.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
 }
 
 .spline-background {
     position: absolute;
-    top: 0;
-    left: 0;
+    top: 50%;
+    right: -100px;
     width: 40%;
-    height: 60%;
+    transform: translateY(-50%);
+    height: 70%;
     z-index: 0;
     background-color: #000;
     
@@ -19,7 +23,17 @@
         width: 100% !important;
         height: 100% !important;
     }
+    .watermark-cover {
+    position: absolute;
+    bottom: 20px; // Adjust based on watermark position
+    right: 10px;  // Adjust based on watermark position
+    width: 150px; // Adjust to cover watermark width
+    height: 40px; // Adjust to cover watermark height
+    background-color: #000;
+    z-index: 10;
 }
+}
+
 
 .content-overlay {
     position: relative;

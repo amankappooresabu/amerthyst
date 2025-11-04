@@ -8,6 +8,7 @@ export default function Landing1() {
                 <Spline
                     scene="https://prod.spline.design/OlHtpmgzF5nZzi52/scene.splinecode" 
                 />
+                <div className="watermark-cover"></div>
             </div>
             
             
