@@ -1,53 +1,99 @@
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400..900&display=swap');
+
+
 .landing-container {
-    position: relative;
-    width: 100%;
-    height: 100vh;
-    overflow: hidden;
-    background-image: url('/bg1.jpg');
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+  background-image: url('/bg1.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
 }
 
 .spline-background {
+  position: absolute;
+  top: 45%;
+  left: 55%;
+  width: 40%;
+  height: 70%;
+  transform: translate(-50%, -50%); // Centers both horizontally and vertically
+  z-index: 0;
+
+  canvas {
+    width: 100% !important;
+    height: 100% !important;
+  }
+
+  .watermark-cover {
     position: absolute;
-    top: 50%;
-    right: -100px;
-    width: 40%;
-    transform: translateY(-50%);
-    height: 70%;
-    z-index: 0;
-    background-color: #000;
-    
-    canvas {
-        width: 100% !important;
-        height: 100% !important;
-    }
-    .watermark-cover {
-    position: absolute;
-    bottom: 20px; // Adjust based on watermark position
-    right: 10px;  // Adjust based on watermark position
-    width: 150px; // Adjust to cover watermark width
-    height: 40px; // Adjust to cover watermark height
+    bottom: 20px;
+    right: 10px;
+    width: 150px;
+    height: 40px;
     background-color: #000;
     z-index: 10;
+  }
 }
-}
-
 
 .content-overlay {
-    position: relative;
-    z-index: 1;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: 100%;
+  position: relative;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
 }
 
 .brand-title {
-    font-size: 4rem;
-    font-weight: bold;
+  font-size: 4rem;
+  font-weight: bold;
+  color: white;
+  text-align: center;
+  text-shadow: 2px 2px 20px rgba(0, 0, 0, 0.8);
+}
+.brand-section {
+  position: absolute;
+  bottom: 40px;
+  left: 60px;
+  z-index: 2;
+  max-width: 400px;
+
+  .brand-title-text {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 2.5rem;
+    font-weight: 400;
     color: white;
-    text-align: center;
+    margin-bottom: 16px;
     text-shadow: 2px 2px 20px rgba(0, 0, 0, 0.8);
+  }
+
+  .brand-description {
+    font-size: 1rem;
+    color: #a0a0a0;
+    line-height: 1.6;
+    margin-bottom: 24px;
+    text-shadow: 1px 1px 10px rgba(0, 0, 0, 0.6);
+  }
+
+  .learn-more-btn {
+    background-color: transparent;
+    color: white;
+    border: 1px solid #9d4489 ;
+    padding: 12px 32px;
+    font-size: 1rem;
+    font-weight: 600;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+
+    &:hover {
+      background-color: #8a3a77;
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(157, 68, 137, 0.4);
+    }
+  }
 }

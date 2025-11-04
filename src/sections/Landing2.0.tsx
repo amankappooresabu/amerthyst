@@ -10,7 +10,14 @@ export default function Landing1() {
                 />
                 <div className="watermark-cover"></div>
             </div>
-            
+            <div className="brand-section">
+  <h1 className="brand-title-text">Purple Sky Trade</h1>
+  <p className="brand-description">
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+    Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+  </p>
+  <button className="learn-more-btn">Learn More</button>
+</div>
             
         </div>
     )
