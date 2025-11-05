@@ -1,0 +1,39 @@
+.segmented-toggle-container {
+  display: flex;
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 12px;
+  padding: 5px 5px;
+  gap: 4px;
+  width: fit-content;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
+}
+
+.toggle-option {
+  padding: 8px 28px;
+  border: none;
+  border-radius: 8px;
+  font-size: 0.95rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  letter-spacing: 0.3px;
+  
+   background: transparent;
+  color: rgba(255, 255, 255, 0.6);
+  
+  // White state (active)
+  &.active {
+    background: rgba(255, 255, 255, 0.95);
+    color: #1a1a1a;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+  }
+
+  &:hover:not(.active) {
+    background: rgba(255, 255, 255, 0.05);
+    color: rgba(255, 255, 255, 0.8);
+  }
+}

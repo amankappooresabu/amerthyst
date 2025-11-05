@@ -1,10 +1,10 @@
 import { useState, useEffect } from 'react';
-import Navbar from "./sections/Navbar"
 import SplashScreen from './sections/Splashscreen';
 import Categories from './sections/Categories';
 import Contact from './sections/Contact';
 import Landing1 from './sections/Landing2.0';
 import LogoNav from './sections/LogoNav';
+import Navbar2 from './sections/Navbar2.0';
 
 function App() {
   const [showSplash, setShowSplash] = useState(true);
@@ -23,7 +23,7 @@ function App() {
 
   return (
     <>
-      <Navbar/>
+      <Navbar2/>
       <LogoNav/>
       <Landing1/>
       <Categories/>
