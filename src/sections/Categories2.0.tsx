@@ -34,14 +34,14 @@ export default function Categories() {
        <div 
   className="absolute top-0 left-0 w-full pointer-events-none"
   style={{
-    height: '120px',
+    height: '100px',
     background: 'linear-gradient(to bottom, #000000 0%, rgba(0, 0, 0, 0.8) 30%, rgba(0, 0, 0, 0.3) 70%, transparent 100%)',
     zIndex: 11
   }}
 />
       {/* Left Image - slides in from bottom left */}
       <div
-        className={`absolute bottom-0 left-0 w-54 h-54 transition-all duration-1000 ease-out ${
+        className={`absolute bottom-0 left-0 w-54 h-54 transition-all duration-1200 ease-out ${
           isVisible ? 'translate-x-0 translate-y-0 opacity-100' : '-translate-x-full translate-y-full opacity-0'
         }`}
       >
@@ -54,7 +54,7 @@ export default function Categories() {
 
       {/* Right Image - slides in from bottom right */}
       <div
-        className={`absolute bottom-0 right-0 w-54 h-54 transition-all duration-1000 ease-out ${
+        className={`absolute bottom-0 right-0 w-54 h-54 transition-all duration-1200 ease-out ${
           isVisible ? 'translate-x-0 translate-y-0 opacity-100' : 'translate-x-full translate-y-full opacity-0'
         }`}
       >
@@ -66,7 +66,7 @@ export default function Categories() {
       </div>
 
       {/* Center content area - you can add your content here */}
-<div className="flex items-center justify-center min-h-screen px-8" style={{
+<div className="flex items-center justify-center min-h-screen px-8 " style={{
     backgroundImage: 'url("/category_bg.png")',
     backgroundSize: '50%',
     backgroundRepeat: 'no-repeat',
@@ -131,6 +131,7 @@ export default function Categories() {
 </div>
   </div>
 </div>
+<div className="gradient-overlay" />
     </div>
   );
 }
