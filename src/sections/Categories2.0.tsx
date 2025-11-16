@@ -30,20 +30,25 @@ export default function Categories() {
   }, []);
 
   return (
-    <div ref={sectionRef} className="bg-black min-h-screen relative overflow-hidden">
-       <div 
-  className="absolute top-0 left-0 w-full pointer-events-none"
-  style={{
-    height: '100px',
-    background: 'linear-gradient(to bottom, #000000 0%, rgba(0, 0, 0, 0.8) 30%, rgba(0, 0, 0, 0.3) 70%, transparent 100%)',
-    zIndex: 11
-  }}
-/>
-      {/* Left Image - slides in from bottom left */}
-      <div
-        className={`absolute bottom-0 left-0 w-54 h-54 transition-all duration-1200 ease-out ${
-          isVisible ? 'translate-x-0 translate-y-0 opacity-100' : '-translate-x-full translate-y-full opacity-0'
-        }`}
+  <div ref={sectionRef} className="bg-black relative">
+    <div 
+      className="absolute top-0 left-0 w-full pointer-events-none"
+      style={{
+        height: '100px',
+        background: 'linear-gradient(to bottom, #000000 0%, rgba(0, 0, 0, 0.8) 30%, rgba(0, 0, 0, 0.3) 70%, transparent 100%)',
+        zIndex: 11
+      }}
+    />
+
+    {/* Sticky wrapper for fixed elements */}
+    <div className="categories-sticky-wrapper">
+      {/* Left Image */}
+      <div className="absolute bottom-0 left-0 w-54 h-54 z-10"
+        style={{
+          transform: isVisible ? 'translate(0, 0)' : 'translate(-100%, 100%)',
+          opacity: isVisible ? 1 : 0,
+          transition: 'all 1.2s ease-out'
+        }}
       >
         <img
           src="/categorydim1.png"
@@ -52,11 +57,13 @@ export default function Categories() {
         />
       </div>
 
-      {/* Right Image - slides in from bottom right */}
-      <div
-        className={`absolute bottom-0 right-0 w-54 h-54 transition-all duration-1200 ease-out ${
-          isVisible ? 'translate-x-0 translate-y-0 opacity-100' : 'translate-x-full translate-y-full opacity-0'
-        }`}
+      {/* Right Image */}
+      <div className="absolute bottom-0 right-0 w-54 h-54 z-10"
+        style={{
+          transform: isVisible ? 'translate(0, 0)' : 'translate(100%, 100%)',
+          opacity: isVisible ? 1 : 0,
+          transition: 'all 1.2s ease-out'
+        }}
       >
         <img
           src="/categorydim2.png"
@@ -65,16 +72,27 @@ export default function Categories() {
         />
       </div>
 
-      {/* Center content area - you can add your content here */}
-<div className="flex items-center justify-center min-h-screen px-8 " style={{
-    backgroundImage: 'url("/category_bg.png")',
-    backgroundSize: '50%',
-    backgroundRepeat: 'no-repeat',
-    backgroundPosition: 'center',
-  }}
->
-  <div className="categories-content">
-    <div className='top-1/2 h-full ' style={{ display: 'flex', flexDirection: 'column', gap: '20px',  flexShrink: 0 }}>
+      {/* Background */}
+      <div className="categories-bg-fixed" 
+        style={{
+          backgroundImage: 'url("/category_bg.png")',
+          backgroundSize: '50%',
+          backgroundRepeat: 'no-repeat',
+          backgroundPosition: 'center',
+        }}
+      />
+
+      {/* Bottom gradient */}
+      <div className="gradient-overlay" />
+    </div>
+
+    {/* Scrollable content wrapper */}
+    <div className="categories-content-wrapper">
+      {/* First section */}
+      <div className="flex items-center justify-center min-h-screen px-8">
+        <div className="categories-content">
+          {/* All your existing content */}
+          <div className='top-1/2 h-full ' style={{ display: 'flex', flexDirection: 'column', gap: '20px',  flexShrink: 0 }}>
             <div className="categories-text-box">
               <h2 className="categories-heading">
                 Why Choose Our <br/> Products ?
@@ -93,45 +111,52 @@ export default function Categories() {
               ))}
             </div>
           </div>
-  <div style={{ display: 'flex', flexDirection: 'column', flex: 1, gap: '15px' }}>
-  <div className="categories-right-box">
-    <img 
-      src="/greyglobe.png" 
-      alt="" 
-      className="categories-right-image"
-    />
-    <h3 className="categories-right-heading">
-      Global Taste & Culinary Exports
-    </h3>
-    <p className="categories-right-description">
-      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.
-    </p>
-    <button className="learn-more-button">
-      Learn More
-    </button>
-  </div>
+          <div style={{ display: 'flex', flexDirection: 'column', flex: 1, gap: '15px' }}>
+            <div className="categories-right-box">
+              <img 
+                src="/greyglobe.png" 
+                alt="" 
+                className="categories-right-image"
+              />
+              <h3 className="categories-right-heading">
+                Global Taste & Culinary Exports
+              </h3>
+              <p className="categories-right-description">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.
+              </p>
+              <button className="learn-more-button">
+                Learn More
+              </button>
+            </div>
 
-  <div className="categories-section">
-    <h3 className="categories-section-heading">Categories</h3>
-    <div className="categories-cards-container">
-      {catData.map((card) => (
-        <div key={card.id} className="category-card" >
-          <img src={card.image} alt={card.name} className="category-card-image" style={{ 
-          marginTop: card.imageMarginTop,
-          marginBottom: card.imageMarginBottom
-        }} />
-          <span className="category-card-name" style={{ 
-          marginTop: card.textMarginTop,
-          marginBottom: card.textMarginBottom
-        }}>{card.name}</span>
+            <div className="categories-section">
+              <h3 className="categories-section-heading">Categories</h3>
+              <div className="categories-cards-container">
+                {catData.map((card) => (
+                  <div key={card.id} className="category-card" >
+                    <img src={card.image} alt={card.name} className="category-card-image" style={{ 
+                      marginTop: card.imageMarginTop,
+                      marginBottom: card.imageMarginBottom
+                    }} />
+                    <span className="category-card-name" style={{ 
+                      marginTop: card.textMarginTop,
+                      marginBottom: card.textMarginBottom
+                    }}>{card.name}</span>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
         </div>
-      ))}
+      </div>
+
+      {/* Second section - empty card */}
+      <div className="categories-next-section">
+        <div className="categories-next-card">
+          {/* Empty for now */}
+        </div>
+      </div>
     </div>
   </div>
-</div>
-  </div>
-</div>
-<div className="gradient-overlay" />
-    </div>
-  );
+);
 }

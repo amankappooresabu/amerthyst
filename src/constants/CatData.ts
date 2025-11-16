@@ -26,4 +26,13 @@ export const catData = [
     textMarginTop: '10px',
     textMarginBottom: '8px'
   },
+  { 
+    id: 4, 
+    name: 'Eco & Sustainable Innovations', 
+    image: '/Categories/wind.png',
+    imageMarginTop: '0px',
+    imageMarginBottom: '12px',
+    textMarginTop: '10px',
+    textMarginBottom: '8px'
+  },
 ];

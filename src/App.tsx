@@ -1,6 +1,5 @@
 import { useState, useEffect } from 'react';
 import SplashScreen from './sections/Splashscreen';
-import Contact from './sections/Contact';
 import Landing1 from './sections/Landing2.0';
 import LogoNav from './sections/LogoNav';
 import Navbar2 from './sections/Navbar2.0';
@@ -27,7 +26,6 @@ function App() {
       <LogoNav/>
       <Landing1/>
       <Categories/>
-      <Contact/>
     </>
   );
 }

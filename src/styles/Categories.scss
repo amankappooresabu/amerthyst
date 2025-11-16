@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Orbitron:wght@400..900&display=swap');
 
 .categories-content {
-  width: 60%;
+  width: 80%;
   height: 540px;
   padding: 30px;
   background: rgba(255, 255, 255, 0.05);
@@ -257,5 +257,47 @@
   height: 220px;
   background: linear-gradient(to bottom, transparent 0%, rgba(0, 0, 0, 0.3) 30%, rgba(0, 0, 0, 0.8) 70%, #000000 100%);
   pointer-events: none;
-  z-index: 4;
+  z-index: 11;
+}
+.categories-sticky-wrapper {
+  position: sticky;
+  top: 0;
+  height: 100vh;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.categories-bg-fixed {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+}
+
+.categories-content-wrapper {
+  position: relative;
+  z-index: 5;
+  pointer-events: auto;
+  margin-top: -90vh;
+}
+
+.categories-next-section {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 4rem 2rem;
+}
+
+.categories-next-card {
+  width: 80%;
+  height: 540px;
+  padding: 30px;
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(3px);
+  border-radius: 25px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
 }
