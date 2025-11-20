@@ -30,7 +30,7 @@ export default function Categories() {
   }, []);
 
   return (
-  <div ref={sectionRef} className="bg-black relative">
+  <div ref={sectionRef} className="bg-black relative" >
     <div 
       className="absolute top-0 left-0 w-full pointer-events-none"
       style={{

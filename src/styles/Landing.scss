@@ -74,10 +74,11 @@
   left: 50%;
   transform: translateX(-50%);
   width: 70%;
-  max-width: 1400px;
+  max-width: calc(100vw - 100px);
   height: 90%;
   z-index: 5;
   padding: 0 50px;
+  box-sizing: border-box;
 }
 
 .swiper {
@@ -102,17 +103,19 @@
   -webkit-backdrop-filter: blur(10px);
   border: 1px solid rgba(255, 255, 255, 0.1);
   border-radius: 20px;
-  padding: 35px 32px;
+  padding: 25px 32px; // Reduced top padding
   min-width: 220px;
   width: 100%;
   height: 340px;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
+  justify-content: flex-start; // Changed from center
   box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
   transition: all 0.4s ease;
   transform: scale(0.85);
+  position: relative;
+  overflow: hidden;
 }
 
 .swiper-slide-active .glass-card {
@@ -127,19 +130,54 @@
 
 .card-title {
   font-family: 'Montserrat', sans-serif;
-  font-size: 0.95rem;
+  padding: 5px;
+  font-size: 0.65rem;
   font-weight: 500;
   color: #c9c9c9;
   text-align: center;
+  border-radius: 10px;
   text-transform: uppercase;
   line-height: 1.2;
   letter-spacing: 2px;
   transition: all 0.3s ease;
+  margin-bottom: 20px; // Space below title
+  position: relative;
+  border: 1px solid #c9c9c9;
+  z-index: 2;
 }
 
 .swiper-slide-active .card-title {
-  font-size: 1.2rem;
+  font-size: 0.70rem;
   color: #e9e9e9;
+}
+.logos-container {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  flex: 1;
+  overflow: hidden;
+}
+
+.product-logo {
+  position: absolute;
+  object-fit: contain;
+  transition: all 0.3s ease;
+  filter: brightness(1);
+  
+  &:hover {
+    opacity: 1;
+    transform: scale(1.45);
+    filter: brightness(2.1);
+    z-index: 10;
+  }
+}
+
+.swiper-slide-active {
+  .product-logo {
+  
+    opacity: 0.85;
+    object-fit: contain;
+  }
 }
 
 // Responsive
