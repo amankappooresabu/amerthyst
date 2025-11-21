@@ -158,7 +158,7 @@ export default function Categories() {
         </div>
       </div>
       <div className="flex items-center justify-center min-h-screen px-8">
-        <div className="categories-next-card1">
+        <div className="categories-next-card">
           {/* Add your new content here */}
          <ContactPage/>
         </div>
