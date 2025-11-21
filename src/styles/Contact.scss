@@ -1,0 +1,132 @@
+// Define variables for easy theme changes
+$color-dark-bg: #000;
+$color-text-light: #fff;
+$color-text-dim: #aaa;
+$color-glass-bg: rgba(255, 255, 255, 0.05);
+$color-glass-border: rgba(255, 255, 255, 0.1);
+$border-radius-base: 8px;
+$border-radius-card: 12px;
+$spacing-gap: 60px;
+
+.contact-page-container {
+  min-height: 50vh;
+  color: $color-text-light;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1px;
+
+  .contact-content {
+    display: flex;
+    gap: $spacing-gap;
+    max-width: 1400px;
+    width: 100%;
+
+    // --- LEFT SIDE: Contact Information ---
+    .contact-info-section {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      gap: 13px;
+
+      h1 {
+        font-size: 2.5em;
+        font-weight: bold;
+      }
+
+      .contact-description {
+        color: $color-text-dim;
+      }
+
+      .contact-cards {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+
+        .info-card {
+          background: $color-glass-bg;
+          border: 1px solid $color-glass-border;
+          border-radius: $border-radius-card;
+          padding: 18px;
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          cursor: pointer;
+          transition: background 0.3s;
+
+          &:hover {
+            background: rgba(255, 255, 255, 0.1);
+          }
+
+          .card-details {
+            flex-grow: 1;
+            margin-left: 15px;
+
+            .card-label {
+              color: $color-text-dim;
+              font-size: 0.9em;
+            }
+          }
+          
+          .card-icon, .card-arrow {
+            font-size: 1.2em;
+          }
+        }
+      }
+    }
+
+    // --- RIGHT SIDE: Contact Form ---
+    .contact-form-section {
+      flex: 1.5; // Makes the form section wider
+
+      .contact-form {
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+
+        .form-input, 
+        .form-textarea {
+          width: 100%;
+          padding: 15px;
+          background: $color-glass-bg;
+          border: 1px solid $color-glass-border;
+          border-radius: $border-radius-base;
+          color: $color-text-light;
+          font-size: 1em;
+          outline: none;
+          resize: none;
+
+          &::placeholder {
+            color: $color-text-dim;
+          }
+        }
+
+        .submit-button {
+          background-color: $color-text-light;
+          color: $color-dark-bg;
+          padding: 15px 30px;
+          border: none;
+          border-radius: $border-radius-base;
+          font-size: 1.1em;
+          font-weight: bold;
+          cursor: pointer;
+          transition: background-color 0.3s;
+
+          &:hover {
+            background-color: #eee;
+          }
+        }
+      }
+    }
+  }
+}
+
+// --- Media Query for Responsiveness ---
+@media (max-width: 768px) {
+  .contact-page-container {
+    .contact-content {
+      flex-direction: column;
+      gap: 40px;
+    }
+  }
+}

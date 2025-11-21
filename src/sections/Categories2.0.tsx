@@ -2,6 +2,7 @@ import { useEffect, useRef, useState } from 'react';
 import '../styles/Categories.scss'
 import { categories } from '../constants/Categorydata';
 import { catData} from '../constants/CatData'
+import ContactPage from './Contact';
 
 
 export default function Categories() {
@@ -154,6 +155,12 @@ export default function Categories() {
       <div className="categories-next-section">
         <div className="categories-next-card">
           {/* Empty for now */}
+        </div>
+      </div>
+      <div className="flex items-center justify-center min-h-screen px-8">
+        <div className="categories-next-card1">
+          {/* Add your new content here */}
+         <ContactPage/>
         </div>
       </div>
     </div>

@@ -13,15 +13,15 @@ export const cardData: CardData[] = [
     id: 1, 
     title: "GLOBAL TASTE & CULINARY EXPORTS",
     logos: [
-      { src: "/landinglogos/Card1/logo1.png", width: "60px", height: "60px" },
-      { src: "/landinglogos/Card1/logo2.png", width: "55px", height: "65px" },
-      { src: "/landinglogos/Card1/logo3.png", width: "70px", height: "55px" },
-      { src: "/landinglogos/Card1/logo4.png", width: "65px", height: "60px" },
-      { src: "/landinglogos/Card1/logo5.png", width: "50px", height: "70px" },
-      { src: "/landinglogos/Card1/logo6.png", width: "105px", height: "100px" },
-      { src: "/landinglogos/Card1/logo7.png", width: "60px", height: "60px" },
-      { src: "/landinglogos/Card1/logo8.png", width: "95px", height: "95px" },
-      { src: "/landinglogos/Card1/logo9.png", width: "100px", height: "100px" },
+      { src: "/landinglogos/Card1/logo1.png", width: "50px", height: "50px" },
+      { src: "/landinglogos/Card1/logo2.png", width: "50px", height: "50px" },
+      { src: "/landinglogos/Card1/logo3.png", width: "50px", height: "50px" },
+      { src: "/landinglogos/Card1/logo4.png", width: "50px", height: "50px" },
+      { src: "/landinglogos/Card1/logo5.png", width: "50px", height: "50px" },
+      { src: "/landinglogos/Card1/logo6.png", width: "50px", height: "50px" },
+      { src: "/landinglogos/Card1/logo7.png", width: "50px", height: "50px" },
+      { src: "/landinglogos/Card1/logo8.png", width: "50px", height: "50px" },
+      { src: "/landinglogos/Card1/logo9.png", width: "50px", height: "50px" },
     ]
   },
   { 
@@ -39,23 +39,23 @@ export const cardData: CardData[] = [
     id: 3, 
     title: "AGRO & PLANTATION COMMODITIES",
     logos: [
-      { src: "/landinglogos/Card3/logo1.png", width: "80px", height: "80px" },
-      { src: "/landinglogos/Card3/logo2.png", width: "60px", height: "60px" },
-      { src: "/landinglogos/Card3/logo3.png", width: "80px", height: "80px" },
-      { src: "/landinglogos/Card3/logo4.png", width: "80px", height: "80px" },
-      { src: "/landinglogos/Card3/logo5.png", width: "80px", height: "80px" },
-      { src: "/landinglogos/Card3/logo6.png", width: "80px", height: "80px" },
+      { src: "/landinglogos/Card3/logo1.png", width: "50px", height: "50px" },
+      { src: "/landinglogos/Card3/logo2.png", width: "50px", height: "50px" },
+      { src: "/landinglogos/Card3/logo3.png", width: "50px", height: "50px" },
+      { src: "/landinglogos/Card3/logo4.png", width: "50px", height: "50px" },
+      { src: "/landinglogos/Card3/logo5.png", width: "50px", height: "50px" },
+      { src: "/landinglogos/Card3/logo6.png", width: "50px", height: "50px" },
     ]
   },
   { 
     id: 4, 
     title: "NUTRACEUTICAL & FUNCTIONAL ADDITIVES",
     logos: [
-      { src: "/landinglogos/Card4/logo1.png", width: "80px", height: "80px" },
-      { src: "/landinglogos/Card4/logo2.png", width: "60px", height: "60px" },
-      { src: "/landinglogos/Card4/logo3.png", width: "60px", height: "60px" },
-      { src: "/landinglogos/Card4/logo4.png", width: "60px", height: "60px" },
-      { src: "/landinglogos/Card4/logo5.png", width: "60px", height: "60px" },
+      { src: "/landinglogos/Card4/logo1.png", width: "55px", height: "55px" },
+      { src: "/landinglogos/Card4/logo2.png", width: "55px", height: "55px" },
+      { src: "/landinglogos/Card4/logo3.png", width: "55px", height: "55px" },
+      { src: "/landinglogos/Card4/logo4.png", width: "55px", height: "55px" },
+      { src: "/landinglogos/Card4/logo5.png", width: "55px", height: "55px" },
     ]
   },
   { 
@@ -82,10 +82,10 @@ export const cardData: CardData[] = [
     id: 7, 
     title: "BEAUTY, SPA & PERSONAL CARE INPUTS",
     logos: [
-      { src: "/landinglogos/Card7/logo1.png",  width: "50px", height: "50px" },
-      { src: "/landinglogos/Card7/logo2.png", width: "50px", height: "50px" },
-      { src: "/landinglogos/Card7/logo3.png", width: "50px", height: "50px"},
-      { src: "/landinglogos/Card7/logo4.png",  width: "50px", height: "50px" },
+      { src: "/landinglogos/Card7/logo1.png",  width: "60px", height: "60px" },
+      { src: "/landinglogos/Card7/logo2.png", width: "60px", height: "60px" },
+      { src: "/landinglogos/Card7/logo3.png", width: "60px", height: "60px"},
+      { src: "/landinglogos/Card7/logo4.png",  width: "60px", height: "60px" },
     ]
   },
   { 
