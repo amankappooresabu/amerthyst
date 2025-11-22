@@ -1,13 +1,64 @@
-import { useEffect, useRef, useState } from 'react';
+import { useEffect, useMemo, useRef, useState } from 'react';
 import '../styles/Categories.scss'
 import { categories } from '../constants/Categorydata';
-import { catData} from '../constants/CatData'
+import { cardData} from '../constants/CatData'
 import ContactPage from './Contact';
+import Swiper from 'swiper';
+import { Autoplay } from 'swiper/modules';
 
 
 export default function Categories() {
   const [isVisible, setIsVisible] = useState(false);
   const sectionRef = useRef(null);
+  const swiperRef = useRef(null);
+   const logoPositions = useMemo(() => {
+    const positions: Record<number, Array<{top: number, left: number}>> = {};
+    
+    cardData.forEach(card => {
+      const logoCount = card.logos.length;
+      
+      // Create a grid based on logo count
+      const cols = Math.ceil(Math.sqrt(logoCount));
+      const rows = Math.ceil(logoCount / cols);
+      
+      // Create grid cells
+      const cells: Array<{top: number, left: number}> = [];
+      for (let row = 0; row < rows; row++) {
+        for (let col = 0; col < cols; col++) {
+          cells.push({
+            top: (100 / rows) * row + (100 / rows) / 2,
+            left: (100 / cols) * col + (100 / cols) / 2,
+          });
+        }
+      }
+      
+      // Shuffle cells for randomness
+      for (let i = cells.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [cells[i], cells[j]] = [cells[j], cells[i]];
+      }
+      
+      // Assign positions with SMALLER random offset within cell
+      const cardPositions = card.logos.map((_, idx) => {
+        const cell = cells[idx];
+        const cellWidth = 100 / cols;
+        const cellHeight = 100 / rows;
+        
+        // Reduced from 0.6 to 0.3 (±15% of cell size instead of ±30%)
+        const randomOffsetTop = (Math.random() - 0.5) * cellHeight * 0.3;
+        const randomOffsetLeft = (Math.random() - 0.5) * cellWidth * 0.3;
+        
+        return {
+          top: Math.max(15, Math.min(85, cell.top + randomOffsetTop)),
+          left: Math.max(15, Math.min(85, cell.left + randomOffsetLeft)),
+        };
+      });
+      
+      positions[card.id] = cardPositions;
+    });
+    
+    return positions;
+  }, []);
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -29,6 +80,43 @@ export default function Categories() {
       }
     };
   }, []);
+  useEffect(() => {
+  if (swiperRef.current) {
+    const swiper = new Swiper(swiperRef.current, {
+      modules: [Autoplay],
+      grabCursor: true,
+      centeredSlides: false,
+      slidesPerView: 4,
+      spaceBetween: 15,
+      loop: true,
+      autoplay: {
+        delay: 3000,
+        disableOnInteraction: false,
+      },
+      speed: 600,
+      breakpoints: {
+        320: {
+          slidesPerView: 1,
+          spaceBetween: 10
+        },
+        640: {
+          slidesPerView: 2,
+          spaceBetween: 12
+        },
+        1024: {
+          slidesPerView: 3,
+          spaceBetween: 15
+        },
+        1280: {
+          slidesPerView: 4,
+          spaceBetween: 15
+        }
+      }
+    });
+
+    return () => swiper.destroy();
+  }
+}, []);
 
   return (
   <div ref={sectionRef} className="bg-black relative" >
@@ -112,7 +200,7 @@ export default function Categories() {
               ))}
             </div>
           </div>
-          <div style={{ display: 'flex', flexDirection: 'column', flex: 1, gap: '15px' }}>
+          <div style={{ display: 'flex', flexDirection: 'column', flex: '0 1 auto', gap: '15px', minHeight: 0, overflow: 'hidden' }}>
             <div className="categories-right-box">
               <img 
                 src="/greyglobe.png" 
@@ -131,22 +219,41 @@ export default function Categories() {
             </div>
 
             <div className="categories-section">
-              <h3 className="categories-section-heading">Categories</h3>
-              <div className="categories-cards-container">
-                {catData.map((card) => (
-                  <div key={card.id} className="category-card" >
-                    <img src={card.image} alt={card.name} className="category-card-image" style={{ 
-                      marginTop: card.imageMarginTop,
-                      marginBottom: card.imageMarginBottom
-                    }} />
-                    <span className="category-card-name" style={{ 
-                      marginTop: card.textMarginTop,
-                      marginBottom: card.textMarginBottom
-                    }}>{card.name}</span>
-                  </div>
-                ))}
-              </div>
-            </div>
+  <h3 className="categories-section-heading">Categories</h3>
+  <div ref={swiperRef} className="swiper categories-swiper">
+    <div className="swiper-wrapper">
+      {cardData.map((card) => (
+        <div key={card.id} className="swiper-slide">
+          <div className="category-card">
+            <span 
+              className="category-card-name" 
+            >
+              {card.title}
+            </span>
+            <div className='logos-container'>
+            {card.logos.map((logo, idx) => (
+    <img 
+      key={idx}
+      src={logo.src} 
+      alt={`${card.title} logo ${idx + 1}`}
+      className="product-logo"
+      style={{
+        top: `${logoPositions[card.id]?.[idx]?.top ?? 50}%`,
+        left: `${logoPositions[card.id]?.[idx]?.left ?? 50}%`,
+        width: logo.width,
+        height: logo.height,
+        transform: 'translate(-50%, -50%)',
+      }}
+    />
+  ))}
+  </div>
+            
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+</div>
           </div>
         </div>
       </div>

@@ -16,8 +16,8 @@
   box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
   display: flex;
   gap: 20px;
-  align-items: flex-start;
-   
+  align-items: stretch; // Changed from flex-start
+  overflow: hidden; // Add this to prevent overflow
 }
 .categories-text-box {
   width: 200px;
@@ -110,9 +110,10 @@
   z-index: 0;
 }
 .categories-right-box {
-  flex: 1;
+  flex: 0 0 auto; // Don't grow or shrink
   width: 100%;
   height: 35vh;
+  max-height: 200px; // Add max height constraint
   padding: 20px;
   background: rgba(255, 255, 255, 0.08);
   backdrop-filter: blur(5px);
@@ -123,13 +124,13 @@
   position: relative; 
   overflow: hidden;
   .categories-right-heading {
-  margin-top: 4.0rem;
-  font-family: 'Montserrat', sans-serif;
-  font-size: 1rem;
-  font-weight: 500;
-  color: #ffffff;
-  margin-bottom: 0.5rem;
-  letter-spacing: 0.5px;
+   margin-top: 3.0rem;
+   font-family: 'Montserrat', sans-serif;
+   font-size: 1rem;
+   font-weight: 500;
+   color: #ffffff;
+   margin-bottom: 0.5rem;
+   letter-spacing: 0.5px;
 }
 
 .categories-right-description {
@@ -211,7 +212,36 @@
   display: flex;
   flex-direction: column;
   gap: 15px;
+  flex: 1 1 0; // Allow it to take remaining space
+  min-height: 0; // Critical for flex child
+  overflow: hidden;
+  max-height: 250px;
+  .swiper {
+    margin-left: auto;
+    margin-right: auto;
+    position: relative;
+    overflow: hidden;
+    list-style: none;
+    padding: 0;
+    z-index: 1;
+  }
+
+  .swiper-wrapper {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    display: flex;
+    transition-property: transform;
+    box-sizing: content-box;
+  }
+
+  .swiper-slide {
+    flex-shrink: 0;
+    height: auto;
+  }
 }
+
 
 .categories-section-heading {
   font-family: 'Montserrat', sans-serif;
@@ -221,7 +251,7 @@
   letter-spacing: 0.5px;
 }
 .category-card {
-  flex: 1;
+  width: 100%; // Take full width of the slide
   padding: 4px;
   background: rgba(255, 255, 255, 0.1);
   backdrop-filter: blur(15px);
@@ -232,6 +262,7 @@
   flex-direction: column;
   align-items: center;
   text-align: center;
+  height: 100%;
 
   &:hover {
     background: rgba(255, 255, 255, 0.15);
@@ -241,6 +272,8 @@
 .categories-cards-container {
   display: flex;
   gap: 15px;
+  flex: 1;
+  
 }
 .category-card-image {
   object-fit: cover;
@@ -315,4 +348,19 @@
   border-radius: 25px;
   border: 1px solid rgba(255, 255, 255, 0.1);
   box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+}
+.categories-swiper {
+  width: 100%;
+  height: 100%;
+  
+  .swiper-slide {
+    height: auto;
+  }
+}
+.logos-container {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  flex: 1;
+  overflow: visible;
 }
