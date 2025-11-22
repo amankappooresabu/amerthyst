@@ -5,6 +5,7 @@ import { cardData} from '../constants/CatData'
 import ContactPage from './Contact';
 import Swiper from 'swiper';
 import { Autoplay } from 'swiper/modules';
+import { certificateData } from '../constants/Certificatedata';
 
 
 export default function Categories() {
@@ -60,26 +61,28 @@ export default function Categories() {
     return positions;
   }, []);
 
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) {
-          setIsVisible(true);
-        }
-      },
-      { threshold: 0.3 }
-    );
-
-    if (sectionRef.current) {
-      observer.observe(sectionRef.current);
-    }
-
-    return () => {
-      if (sectionRef.current) {
-        observer.unobserve(sectionRef.current);
+ useEffect(() => {
+  const element = sectionRef.current; // Store the ref value
+  
+  const observer = new IntersectionObserver(
+    ([entry]) => {
+      if (entry.isIntersecting) {
+        setIsVisible(true);
       }
-    };
-  }, []);
+    },
+    { threshold: 0.1 } // Lower threshold
+  );
+
+  if (element) {
+    observer.observe(element);
+  }
+
+  return () => {
+    if (element) {
+      observer.unobserve(element);
+    }
+  };
+}, []);
   useEffect(() => {
   if (swiperRef.current) {
     const swiper = new Swiper(swiperRef.current, {
@@ -117,6 +120,7 @@ export default function Categories() {
     return () => swiper.destroy();
   }
 }, []);
+
 
   return (
   <div ref={sectionRef} className="bg-black relative" >
@@ -259,11 +263,26 @@ export default function Categories() {
       </div>
 
       {/* Second section - empty card */}
-      <div className="categories-next-section">
-        <div className="categories-next-card">
-          {/* Empty for now */}
+      <div className="categories-next-section">  
+        <h1 className="certificate-title">
+      Global-Standard Certifications via Our Trusted Manufacturing Partners
+    </h1>
+  <div className="certificate-next-card">
+    
+    <div className="certificates-grid">
+      {certificateData.map((cert) => (
+        <div key={cert.id} className="certificate-glass-card">
+          <img 
+            src={cert.image} 
+            alt={cert.title} 
+            className="certificate-image"
+          />
+          <h3 className="certificate-card-title">{cert.title}</h3>
         </div>
-      </div>
+      ))}
+    </div>
+  </div>
+</div>
       <div className="flex items-center justify-center min-h-screen px-8">
         <div className="categories-next-card">
           {/* Add your new content here */}
