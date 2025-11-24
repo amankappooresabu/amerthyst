@@ -24,12 +24,12 @@ function App() {
     <>
       <Navbar2/>
       <LogoNav/>
-      <Landing1/>
-      <Categories/>
+      <div style={{ position: 'relative', minHeight: '100vh' }}>
+        <Landing1/>
+        <Categories/>
+      </div>
     </>
   );
 }
-
-
 
 export default App;

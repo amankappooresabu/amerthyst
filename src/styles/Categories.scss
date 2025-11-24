@@ -3,6 +3,13 @@
 * {
   box-sizing: border-box;
 }
+.bg-black1 {
+  position: relative; // Back to relative
+  z-index: 1;
+  margin-top: 0;
+  min-height: 100vh; // Ensure it has height
+}
+
 .categories-content {
   width: 80%;
   max-width: calc(100vw - 40px);
@@ -318,7 +325,7 @@
   position: relative;
   z-index: 5;
   pointer-events: auto;
-  margin-top: -90vh;
+  margin-top: 0;
 }
 
 .categories-next-section {

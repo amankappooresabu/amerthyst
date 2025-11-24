@@ -12,6 +12,7 @@ export default function Categories() {
   const [isVisible, setIsVisible] = useState(false);
   const sectionRef = useRef(null);
   const swiperRef = useRef(null);
+  
    const logoPositions = useMemo(() => {
     const positions: Record<number, Array<{top: number, left: number}>> = {};
     
@@ -123,7 +124,7 @@ export default function Categories() {
 
 
   return (
-  <div ref={sectionRef} className="bg-black relative" >
+  <div ref={sectionRef} className="bg-black bg-black1 relative z-1 " >
     <div 
       className="absolute top-0 left-0 w-full pointer-events-none"
       style={{
@@ -182,6 +183,7 @@ export default function Categories() {
     {/* Scrollable content wrapper */}
     <div className="categories-content-wrapper">
       {/* First section */}
+      
       <div className="flex items-center justify-center min-h-screen px-8">
         <div className="categories-content">
           {/* All your existing content */}
