@@ -6,12 +6,16 @@ import ContactPage from './Contact';
 import Swiper from 'swiper';
 import { Autoplay } from 'swiper/modules';
 import { certificateData } from '../constants/Certificatedata';
+import { rightSliderData } from '../constants/RightSliderData';
+
 
 
 export default function Categories() {
   const [isVisible, setIsVisible] = useState(false);
   const sectionRef = useRef(null);
   const swiperRef = useRef(null);
+  const [currentSlide, setCurrentSlide] = useState(0);
+
   
    const logoPositions = useMemo(() => {
     const positions: Record<number, Array<{top: number, left: number}>> = {};
@@ -121,7 +125,13 @@ export default function Categories() {
     return () => swiper.destroy();
   }
 }, []);
+useEffect(() => {
+  const interval = setInterval(() => {
+    setCurrentSlide((prev) => (prev + 1) % rightSliderData.length);
+  }, 10000); // Change slide every 3 seconds
 
+  return () => clearInterval(interval);
+}, []);
 
   return (
   <div ref={sectionRef} className="bg-black bg-black1 relative z-1 " >
@@ -208,7 +218,25 @@ export default function Categories() {
           </div>
           <div style={{ display: 'flex', flexDirection: 'column', flex: '0 1 auto', gap: '15px', minHeight: 0, overflow: 'hidden' }}>
             <div className="categories-right-box">
-              <img 
+              {rightSliderData.map((slide, index) => (
+    <img 
+      key={slide.id}
+      src={slide.image} 
+      alt={`Slide ${slide.id}`}
+      style={{
+        position: 'absolute',
+        top: 0,
+        left: 0,
+        width: '100%',
+        height: '100%',
+        objectFit: 'cover',
+        borderRadius: '15px',
+        opacity: currentSlide === index ? 1 : 0,
+        transition: 'opacity 0.8s ease-in-out',
+      }}
+    />
+  ))}
+              {/* <img 
                 src="/greyglobe.png" 
                 alt="" 
                 className="categories-right-image"
@@ -221,7 +249,7 @@ export default function Categories() {
               </p>
               <button className="learn-more-button">
                 Learn More
-              </button>
+              </button> */}
             </div>
 
             <div className="categories-section">
