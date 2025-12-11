@@ -5,12 +5,18 @@ import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import '../styles/Landing.scss';
 import { cardData } from '../constants/CardData';
+import { useNavigate } from 'react-router-dom';
+
 
 gsap.registerPlugin(ScrollTrigger);
 
 export default function Landing() {
   const swiperRef = useRef(null);
   const containerRef = useRef(null);
+  const navigate = useNavigate();
+  const handleLogoClick = (cardId: number) => {
+  navigate(`/detail${cardId}`);
+};
 
   const logoPositions = useMemo(() => {
     const positions: Record<number, Array<{top: number, left: number}>> = {};
@@ -128,6 +134,7 @@ export default function Landing() {
                           height: logo.height,
                           transform: 'translate(-50%, -50%)',
                         }}
+                        onClick={() => handleLogoClick(card.id)}
                       />
                     ))}
                   </div>
