@@ -1,9 +1,16 @@
-'use client';
-
 import { useState, useEffect } from 'react';
 
-
-export default function Section1Slider({slides}) {
+interface slides {
+    id: number,
+    title: string,
+    excerpt: string,
+    image: string,
+    Tag: string
+}
+interface Section1SliderProps {
+  slides: slides[];
+}
+export default function Section1Slider({slides} :Section1SliderProps) {
   const [currentSlide, setCurrentSlide] = useState(0);
 
   useEffect(() => {
