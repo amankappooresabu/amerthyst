@@ -28,7 +28,7 @@ function App() {
       <Navbar2/>
       <LogoNav/>
        <Routes>
-     <Route path="/" element={
+       <Route path="/" element={
           <div style={{ position: 'relative', minHeight: '100vh' }}>
             <Landing1/>
             <Categories/>
