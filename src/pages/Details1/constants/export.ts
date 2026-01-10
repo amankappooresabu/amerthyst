@@ -1,9 +1,4 @@
-export interface ExportCapability {
-  id: number;
-  title: string;
-  description: string;
-  image: string;
-}
+import type { ExportCapability } from '../../../sections/components/Details/exportlogistics/exportlogistics'
 
 export const exportCapabilities: ExportCapability[] = [
   {

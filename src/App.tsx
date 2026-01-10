@@ -6,6 +6,7 @@ import Navbar2 from './sections/Navbar2.0';
 import Categories from './sections/Categories2.0';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Detailspage1 from './pages/Details1/detailspage1'
+import DetailsPage2 from './pages/Details2/detailspage2';
 
 
 function App() {
@@ -34,7 +35,8 @@ function App() {
             <Categories/>
           </div>
         } />
-        <Route path="/detail1" element={<Detailspage1/>} />
+        <Route path="/global-taste-and-culinar-exports" element={<Detailspage1/>} />
+        <Route path="/botanical-and-bioactive-ingredients" element={<DetailsPage2/>} />
       </Routes>
     </BrowserRouter>
   );

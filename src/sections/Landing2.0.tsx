@@ -14,8 +14,8 @@ export default function Landing() {
   const swiperRef = useRef(null);
   const containerRef = useRef(null);
   const navigate = useNavigate();
-  const handleLogoClick = (cardId: number) => {
-  navigate(`/detail${cardId}`);
+  const handleLogoClick = (cardId: string) => {
+  navigate(`${cardId}`);
 };
 
   const logoPositions = useMemo(() => {
@@ -134,7 +134,7 @@ export default function Landing() {
                           height: logo.height,
                           transform: 'translate(-50%, -50%)',
                         }}
-                        onClick={() => handleLogoClick(card.id)}
+                        onClick={() => handleLogoClick(card.nav)}
                       />
                     ))}
                   </div>

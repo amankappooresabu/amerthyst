@@ -176,15 +176,7 @@ useEffect(() => {
         />
       </div>
 
-      {/* Background */}
-      <div className="categories-bg-fixed" 
-        style={{
-          backgroundImage: 'url("/category_bg.png")',
-          backgroundSize: '50%',
-          backgroundRepeat: 'no-repeat',
-          backgroundPosition: 'center',
-        }}
-      />
+      
 
       {/* Bottom gradient */}
       <div className="gradient-overlay" />

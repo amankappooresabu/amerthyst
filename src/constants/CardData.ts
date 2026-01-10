@@ -1,6 +1,7 @@
 export interface CardData {
   id: number;
   title: string;
+  nav: string;
   logos: {
     src: string;
     width: string;
@@ -11,6 +12,7 @@ export interface CardData {
 export const cardData: CardData[] = [
   { 
     id: 1, 
+    nav: '/global-taste-and-culinar-exports',
     title: "GLOBAL TASTE & CULINARY EXPORTS",
     logos: [
       { src: "/landinglogos/Card1/logo1.png", width: "50px", height: "50px" },
@@ -26,6 +28,7 @@ export const cardData: CardData[] = [
   },
   { 
     id: 2, 
+    nav:'/botanical-and-bioactive-ingredients',
     title: "BOTANICAL & BIOACTIVE INGREDIENTS",
     logos: [
       { src: "/landinglogos/Card2/logo1.png", width: "60px", height: "60px" },
@@ -37,6 +40,7 @@ export const cardData: CardData[] = [
   },
   { 
     id: 3, 
+    nav:'',
     title: "AGRO & PLANTATION COMMODITIES",
     logos: [
       { src: "/landinglogos/Card3/logo1.png", width: "50px", height: "50px" },
@@ -49,6 +53,7 @@ export const cardData: CardData[] = [
   },
   { 
     id: 4, 
+    nav:'',
     title: "NUTRACEUTICAL & FUNCTIONAL ADDITIVES",
     logos: [
       { src: "/landinglogos/Card4/logo1.png", width: "55px", height: "55px" },
@@ -60,6 +65,7 @@ export const cardData: CardData[] = [
   },
   { 
     id: 5, 
+    nav:'',
     title: "WELLNESS & AYURVEDA",
     logos: [
       { src: "/landinglogos/Card5/logo1.png", width: "60px", height: "60px" },
@@ -70,6 +76,7 @@ export const cardData: CardData[] = [
   },
   { 
     id: 6, 
+    nav:'',
     title: "MARINE & PROTEIN SUPPLY",
     logos: [
       { src: "/landinglogos/Card6/logo1.png", width: "60px", height: "60px" },
@@ -80,6 +87,7 @@ export const cardData: CardData[] = [
   },
   { 
     id: 7, 
+    nav:'',
     title: "BEAUTY, SPA & PERSONAL CARE INPUTS",
     logos: [
       { src: "/landinglogos/Card7/logo1.png",  width: "60px", height: "60px" },
@@ -90,6 +98,7 @@ export const cardData: CardData[] = [
   },
   { 
     id: 8, 
+    nav:'',
     title: "ECO & SUSTAINABLE INNOVATIONS",
     logos: [
       { src: "/landinglogos/Card8/logo1.png", width: "50px", height: "50px" },

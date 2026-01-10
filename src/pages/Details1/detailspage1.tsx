@@ -1,9 +1,12 @@
-import {slides} from '../../constants/Detail1slider'
+import {slides} from './constants/Detail1slider'
 import Section1Slider from '../../sections/components/Details/Slider'
-import CallToAction from './components/calltoaction'
-import Details1Content from './components/detailscontent'
-import ExportLogistics from './components/exportlogistics'
-import Footer from './components/footer'
+import CallToAction from '../../sections/components/Details/calltoaction'
+import Details1Content from '../../sections/components/Details/detailscontent/detailscontent'
+import ExportLogistics from '../../sections/components/Details/exportlogistics/exportlogistics'
+import Footer from '../../sections/components/Details/footer'
+import { productsData } from './constants/productsdata'
+import { exportCapabilities } from './constants/export'
+import { footerData1 } from './constants/footerdata'
 import './detailspage1.scss'
 
 export default function Detailspage1 (){
@@ -11,11 +14,11 @@ export default function Detailspage1 (){
     <div>
       <Section1Slider slides={slides}/>
       <div className="content-container">
-        <Details1Content/>
-        <ExportLogistics/>
-        <CallToAction/>
+        <Details1Content productsData={productsData} />
+        <ExportLogistics exportCapabilities={exportCapabilities} />
+        <CallToAction mainheading={"Tak to Export Specialist"}/>
       </div>
-      <Footer/>
+      <Footer sections={footerData1.sections} backgroundGradient={footerData1.backgroundGradient} />
     </div>
   )
 }
