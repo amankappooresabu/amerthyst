@@ -40,7 +40,7 @@ export const cardData: CardData[] = [
   },
   { 
     id: 3, 
-    nav:'',
+    nav:'/agro-and-plantation-commodities',
     title: "AGRO & PLANTATION COMMODITIES",
     logos: [
       { src: "/landinglogos/Card3/logo1.png", width: "50px", height: "50px" },

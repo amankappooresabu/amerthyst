@@ -25,8 +25,8 @@ interface StatData {
 }
 
 interface InfoData {
-  primaryText: string;
-  secondaryText: string;
+  primaryText?: string;
+  secondaryText?: string;
   additionalText?: string;
 }
 
