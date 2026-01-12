@@ -16,7 +16,7 @@ export default function Detailspage1 (){
       <div className="content-container">
         <Details1Content productsData={productsData} />
         <ExportLogistics exportCapabilities={exportCapabilities} />
-        <CallToAction mainheading={"Tak to Export Specialist"}/>
+        <CallToAction mainheading={"Talk to Export Specialist"}/>
       </div>
       <Footer sections={footerData1.sections} backgroundGradient={footerData1.backgroundGradient} />
     </div>

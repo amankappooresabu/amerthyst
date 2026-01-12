@@ -46,7 +46,7 @@ function CertificationCard({ name, image }: CertificationProps) {
           className="max-w-full max-h-full object-contain rounded-lg"
         />
       </div>
-      <p className="text-gray-800 font-semibold text-sm text-center">{name}</p>
+      <p className="text-white font-semibold text-sm text-center">{name}</p>
     </div>
   );
 }

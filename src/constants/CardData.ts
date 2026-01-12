@@ -53,7 +53,7 @@ export const cardData: CardData[] = [
   },
   { 
     id: 4, 
-    nav:'',
+    nav:'/nutraceutical-and-functional-activities',
     title: "NUTRACEUTICAL & FUNCTIONAL ADDITIVES",
     logos: [
       { src: "/landinglogos/Card4/logo1.png", width: "55px", height: "55px" },
