@@ -65,7 +65,7 @@ export const cardData: CardData[] = [
   },
   { 
     id: 5, 
-    nav:'',
+    nav:'/wellness-and-ayurveda',
     title: "WELLNESS & AYURVEDA",
     logos: [
       { src: "/landinglogos/Card5/logo1.png", width: "60px", height: "60px" },

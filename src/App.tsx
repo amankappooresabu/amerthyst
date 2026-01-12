@@ -9,6 +9,7 @@ import Detailspage1 from './pages/Details1/detailspage1'
 import DetailsPage2 from './pages/Details2/detailspage2';
 import Detailspage3 from './pages/Details3/detailspage3';
 import Detailspage4 from './pages/Details4/detailspage4';
+import Detailspage5 from './pages/Details5/detailspage5';
 
 
 function App() {
@@ -41,6 +42,7 @@ function App() {
         <Route path="/botanical-and-bioactive-ingredients" element={<DetailsPage2/>} />
         <Route path="/agro-and-plantation-commodities" element={<Detailspage3/>} />
         <Route path="/nutraceutical-and-functional-activities" element={<Detailspage4/>} />
+        <Route path="/wellness-and-ayurveda" element={<Detailspage5/>} />
       </Routes>
     </BrowserRouter>
   );
