@@ -87,7 +87,7 @@ export const cardData: CardData[] = [
   },
   { 
     id: 7, 
-    nav:'',
+    nav:'/beauty-spa-and-personal-care-inputs',
     title: "BEAUTY, SPA & PERSONAL CARE INPUTS",
     logos: [
       { src: "/landinglogos/Card7/logo1.png",  width: "60px", height: "60px" },
