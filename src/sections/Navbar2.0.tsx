@@ -37,16 +37,23 @@ const Navbar = () => {
   return (
     <>
       {!isMobile && (
-        <div className="fixed top-5 left-0 right-0 z-50 flex items-center justify-between px-8">
+        <div className="fixed top-0 left-0 right-0 z-50 flex items-center justify-between px-8 bg-linear-to-b from-black/70 to-transparent  py-6  ">
           {/* Left side */}
           <div className="flex items-center ">
             {/* PURPLE SKY TRADE Logo */}
             <div 
-              className="text-lg font-light tracking-wider text-white"
-              style={{ fontFamily: 'Helvetica Neue, Helvetica, Arial, sans-serif' }}
-            >
-              PURPLE SKY TRADE
-            </div>
+    className="text-lg font-light tracking-wider text-white px-6 py-2.5 rounded-xl"
+    style={{ 
+      fontFamily: 'Helvetica Neue, Helvetica, Arial, sans-serif',
+      background: 'rgba(255, 255, 255, 0.08)',
+      backdropFilter: 'blur(12px)',
+      WebkitBackdropFilter: 'blur(12px)',
+      border: '1px solid rgba(255, 255, 255, 0.15)',
+      boxShadow: '0 4px 16px rgba(0, 0, 0, 0.2)'
+    }}
+  >
+    PURPLE SKY TRADE
+  </div>
 
             {/* Segmented Toggle */}
              <div className="absolute left-1/2 transform -translate-x-1/2">

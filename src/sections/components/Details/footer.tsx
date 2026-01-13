@@ -76,7 +76,7 @@ export default function Footer({
         return (
           <div className="bg-white/10 backdrop-blur-sm rounded-lg p-6 border border-white/20">
             <p className="text-white text-4xl font-bold mb-2">
-              {statData.value}{statData.suffix}
+              {statData.value || ''}{statData.suffix}
             </p>
             <p className="text-white text-lg">{statData.label}</p>
           </div>

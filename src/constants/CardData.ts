@@ -98,7 +98,7 @@ export const cardData: CardData[] = [
   },
   { 
     id: 8, 
-    nav:'',
+    nav:'/eco-and-sustainable-innovations',
     title: "ECO & SUSTAINABLE INNOVATIONS",
     logos: [
       { src: "/landinglogos/Card8/logo1.png", width: "50px", height: "50px" },
