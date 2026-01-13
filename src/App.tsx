@@ -10,6 +10,7 @@ import DetailsPage2 from './pages/Details2/detailspage2';
 import Detailspage3 from './pages/Details3/detailspage3';
 import Detailspage4 from './pages/Details4/detailspage4';
 import Detailspage5 from './pages/Details5/detailspage5';
+import Detailspage6 from './pages/Details6/detailspage6';
 
 
 function App() {
@@ -43,6 +44,8 @@ function App() {
         <Route path="/agro-and-plantation-commodities" element={<Detailspage3/>} />
         <Route path="/nutraceutical-and-functional-activities" element={<Detailspage4/>} />
         <Route path="/wellness-and-ayurveda" element={<Detailspage5/>} />
+        <Route path="/marine-and-protein-supply" element={<Detailspage6/>} />
+
       </Routes>
     </BrowserRouter>
   );

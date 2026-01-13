@@ -76,7 +76,7 @@ export const cardData: CardData[] = [
   },
   { 
     id: 6, 
-    nav:'',
+    nav:'/marine-and-protein-supply',
     title: "MARINE & PROTEIN SUPPLY",
     logos: [
       { src: "/landinglogos/Card6/logo1.png", width: "60px", height: "60px" },
