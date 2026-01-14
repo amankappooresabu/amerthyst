@@ -17,13 +17,13 @@ export const agroExportCapabilities: ExportCapability[] = [
     id: 3,
     title: "Quality Control",
     description: "Grading, moisture & foreign matter checks",
-    image: "/agro/export3.jpg"
+    image: "/agro/export3.png"
   },
   {
     id: 4,
     title: "Documentation",
     description: "Phytosanitary, COO, Weight & Inspection Certs",
-    image: "/agro/export4.png"
+    image: "/agro/export4.jpeg"
   },
   {
     id: 5,
