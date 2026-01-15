@@ -6,10 +6,10 @@ export const footerData1 = {
       type: 'certifications' as const,
       data: {
         items: [
-          { id: 1, name: "FSSAI", image: "/certificates/cert14.png" },
-          { id: 2, name: "APEDA", image: "/certificates/cert2.png" },
-          { id: 3, name: "ISO", image: "/certificates/cert8.png" },
-          { id: 4, name: "HACCP", image: "/certificates/cert12.png" }
+          { id: 1, name: "FSSAI", image: "/certificates/cert14.webp" },
+          { id: 2, name: "APEDA", image: "/certificates/cert2.webp" },
+          { id: 3, name: "ISO", image: "/certificates/cert8.webp" },
+          { id: 4, name: "HACCP", image: "/certificates/cert12.webp" }
         ]
       }
     },

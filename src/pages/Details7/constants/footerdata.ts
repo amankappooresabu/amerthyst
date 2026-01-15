@@ -6,8 +6,8 @@ export const footerData7 = {
       type: 'certifications' as const,
       data: {
         items: [
-          { id: 1, name: "ISO", image: "/certificates/cert8.png" },
-          { id: 2, name: "GMP", image: "/certificates/cert13.jpeg" }
+          { id: 1, name: "ISO", image: "/certificates/cert8.webp" },
+          { id: 2, name: "GMP", image: "/certificates/cert13.webp" }
         ]
       }
     },

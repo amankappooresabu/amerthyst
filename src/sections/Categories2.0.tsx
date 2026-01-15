@@ -155,7 +155,7 @@ useEffect(() => {
         }}
       >
         <img
-          src="/categorydim1.png"
+          src="/categorydim1.webp"
           alt="Category Left"
           className="w-full h-full object-cover rounded-tr-3xl shadow-2xl"
         />
@@ -170,7 +170,7 @@ useEffect(() => {
         }}
       >
         <img
-          src="/categorydim2.png"
+          src="/categorydim2.webp"
           alt="Category Right"
           className="w-full h-full object-cover rounded-tl-3xl shadow-2xl"
         />

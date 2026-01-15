@@ -3,7 +3,7 @@ export default function SplashScreen() {
     <div 
       className="relative w-full h-screen overflow-hidden flex justify-center items-center"
       style={{
-        backgroundImage: 'url(/bg6.jpg)',
+        backgroundImage: 'url(/bg6.webp)',
         backgroundSize: 'cover',
         backgroundPosition: 'center',
         backgroundRepeat: 'no-repeat'

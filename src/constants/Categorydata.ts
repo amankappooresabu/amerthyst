@@ -8,41 +8,41 @@ export const categories: Category[] = [
   {
     id: 1,
     name: 'Global Taste & Culinary Exports',
-    image: '/Categories/images1.jpg'
+    image: '/Categories/images1.webp'
   },
   {
     id: 2,
     name: 'Botanical & Bioactive Ingredients',
-    image: '/Categories/images2.jpg'
+    image: '/Categories/images2.webp'
   },
   {
     id: 3,
     name: 'Agro & Plantation Commodities',
-    image: '/Categories/images3.jpg'
+    image: '/Categories/images3.webp'
   },
   {
     id: 4,
     name: 'Nutraceutical & Functional Additives',
-    image: '/Categories/images4.jpg'
+    image: '/Categories/images4.webp'
   },
   {
     id: 5,
     name: 'Wellness & Ayurveda Solutions',
-    image: '/Categories/images5.jpg'
+    image: '/Categories/images5.webp'
   },
   {
     id: 6,
     name: 'Marine & Protien Supply Chain',
-    image: '/Categories/images6.jpg'
+    image: '/Categories/images6.webp'
   },
   {
     id: 7,
     name: 'Beauty, Spa and Personal Care Inputs',
-    image: '/Categories/images7.jpg'
+    image: '/Categories/images7.webp'
   },
   {
     id: 8,
     name: 'Eco & Sustainable Innovations',
-    image: '/Categories/images8.jpg'
+    image: '/Categories/images8.webp'
   }
 ];

@@ -6,7 +6,7 @@ export const footerData6 = {
       type: 'certifications' as const,
       data: {
         items: [
-          { id: 1, name: "HACCP", image: "/certificates/cert12.png" }
+          { id: 1, name: "HACCP", image: "/certificates/cert12.webp" }
         ]
       }
     },

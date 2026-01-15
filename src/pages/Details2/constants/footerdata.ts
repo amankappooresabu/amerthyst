@@ -6,9 +6,9 @@ export const footerData2 = {
       type: 'certifications' as const,
       data: {
         items: [
-          { id: 1, name: "FSSAI", image: "/certificates/cert14.png" },
-          { id: 2, name: "GMP", image: "/certificates/cert13.jpeg" },
-          { id: 3, name: "ISO", image: "/certificates/cert8.png" },
+          { id: 1, name: "FSSAI", image: "/certificates/cert14.webp" },
+          { id: 2, name: "GMP", image: "/certificates/cert13.webp" },
+          { id: 3, name: "ISO", image: "/certificates/cert8.webp" },
         ]
       }
     },
