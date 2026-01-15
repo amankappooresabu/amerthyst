@@ -23,7 +23,7 @@ export const marineExportCapabilities: ExportCapability[] = [
     id: 4,
     title: "Documentation",
     description: "Health Certs, Catch Certs, COO",
-    image: "/marine/export4.jpeg"
+    image: "/marine/export4.png"
   },
   {
     id: 5,

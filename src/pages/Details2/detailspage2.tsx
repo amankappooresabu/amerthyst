@@ -3,7 +3,6 @@ import Section1Slider from "../../sections/components/Details/Slider";
 import { slides } from './constants/Detail2slider'
 import { botanicalProductsData } from "../Details2/constants/productsdata";
 import { botanicalExportCapabilities } from './constants/export'
-
 import './detailspage2.scss'
 import ExportLogistics from "../../sections/components/Details/exportlogistics/exportlogistics";
 import CallToAction from "../../sections/components/Details/calltoaction";

@@ -16,7 +16,7 @@ export default function Detailspage5() {
         <div className="content-container4">
             <DetailsContent productsData={wellnessAyurvedaData} />
             <ExportLogistics exportCapabilities={wellnessExportCapabilities}/>
-            <CallToAction mainheading={'Talk to Ayurveda Specialist'} buttonGradient='from-orange-200 via-amber-200 to-orange-200'/>
+            <CallToAction mainheading={'Talk to Ayurveda Specialist'} buttonGradient='from-[#C19A6B] via-[#D2B48C] to-[#C19A6B]'/>
         </div>
         <Footer sections={footerData5.sections} backgroundGradient={footerData5.backgroundGradient} /> 
     </div>
