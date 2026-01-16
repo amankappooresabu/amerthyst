@@ -4,7 +4,7 @@ import { glob } from 'glob';
 import path from 'path';
 
 const convertImages = async () => {
-  const imageFiles = glob.sync('public/**/*.{jpg,jpeg,png,JPG,JPEG,PNG}');
+  const imageFiles = glob.sync('public/**/*.{jpg,jpeg,png,avif,JPG,JPEG,PNG,AVIF}');
   
   let converted = 0;
   
