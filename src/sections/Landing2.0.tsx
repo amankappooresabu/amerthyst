@@ -1,6 +1,6 @@
 import { useEffect, useRef, useMemo } from 'react';
 import Swiper from 'swiper';
-import { Autoplay, EffectCoverflow } from 'swiper/modules';
+import { Autoplay, EffectCoverflow , Navigation} from 'swiper/modules';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import '../styles/Landing.scss';
@@ -62,31 +62,57 @@ export default function Landing() {
   }, []);
 
   useEffect(() => {
-    if (swiperRef.current) {
-      const swiper = new Swiper(swiperRef.current, {
-        modules: [Autoplay, EffectCoverflow],
-        effect: 'coverflow',
-        grabCursor: true,
-        centeredSlides: true,
-        slidesPerView: 3,
-        loop: true,
-        autoplay: {
-          delay: 5500,
-          disableOnInteraction: true,
+  if (swiperRef.current) {
+    const swiper = new Swiper(swiperRef.current, {
+      modules: [Autoplay, EffectCoverflow, Navigation],
+      effect: 'coverflow',
+      grabCursor: true,
+      centeredSlides: true,
+      slidesPerView: 3,
+      loop: true,
+      autoplay: {
+        delay: 5500,
+        disableOnInteraction: true,
+      },
+      navigation: {
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev',
+      },
+      coverflowEffect: {
+        rotate: 0,
+        stretch: 0,
+        depth: 100,
+        modifier: 2,
+        slideShadows: false,
+      },
+      speed: 600,
+      breakpoints: {
+        0: {
+          slidesPerView: 1,
+          coverflowEffect: {
+            rotate: 0,
+            stretch: 0,
+            depth: 0,
+            modifier: 1,
+            slideShadows: false,
+          },
         },
-        coverflowEffect: {
-          rotate: 0,
-          stretch: 0,
-          depth: 100,
-          modifier: 2,
-          slideShadows: false,
+        880: {
+          slidesPerView: 3,
+          coverflowEffect: {
+            rotate: 0,
+            stretch: 0,
+            depth: 100,
+            modifier: 2,
+            slideShadows: false,
+          },
         },
-        speed: 600,
-      });
+      },
+    });
 
-      return () => swiper.destroy();
-    }
-  }, []);
+    return () => swiper.destroy();
+  }
+}, []);
 
   // GSAP ScrollTrigger Animation
   useEffect(() => {
@@ -142,6 +168,8 @@ export default function Landing() {
               </div>
             ))}
           </div>
+          <div className="swiper-button-prev"></div>
+          <div className="swiper-button-next"></div>
         </div>
       </div>
       

@@ -52,6 +52,17 @@
   z-index: 5;
   padding: 0 50px;
   box-sizing: border-box;
+  @media (max-width: 1300px) {
+    width: 90%;
+  }
+  @media (max-width: 1024px) {
+    width: 100%;
+    padding: 0px;
+  }
+  @media (max-width: 500px) {
+      max-width: 90vw;
+
+}
 }
 
 .swiper {
@@ -62,7 +73,7 @@
 
 .swiper-slide {
   
-  height: 400px;
+  height: 500px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -72,6 +83,7 @@
 }
 
 .brand-title {
+  width: 90%;
   font-family: 'Orbitron', sans-serif;
   font-size: 3rem;
   font-weight: 400;
@@ -120,6 +132,18 @@
   transform: scale(0.85);
   position: relative;
   overflow: visible;
+  @media (max-width: 900px) {
+    height: 300px;
+  }
+  @media (max-width: 880px) {
+    width: 310px;
+  }
+  @media (max-width: 600px) {
+    width: 280px;
+  }
+  @media (max-width: 500px) {
+    width: 220px;
+  }
 }
 
 .swiper-slide-active .glass-card {
@@ -130,6 +154,11 @@
   background: rgba(255, 255, 255, 0.10);
   border-color: rgba(157, 68, 137, 0.4);
   box-shadow: 0 12px 40px rgba(157, 68, 137, 0.3);
+  @media (max-width: 900px) {
+    height: 320px;
+    min-width: 100px;
+
+  }
 }
 
 .card-title {
@@ -189,7 +218,7 @@
 @media (max-width: 768px) {
   .brand-title {
     font-size: 2rem;
-    top: 50px;
+    top: 150px;
   }
 
   .carousel-wrapper {
@@ -208,5 +237,59 @@
 
   .swiper-slide-active .glass-card {
     height: 320px;
+  }
+}
+.swiper-button-next,
+.swiper-button-prev {
+  position: absolute;
+  top: 270px;
+  transform: translateY(-50%);
+  color: rgba(255, 255, 255, 0.9);
+  width: 50px;
+  height: 50px;
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(10px);
+  border-radius: 50%;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  transition: all 0.3s ease;
+  z-index: 10;
+  margin-top: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  @media (max-width: 500px) {
+    width: 40px;
+    height: 40px;
+  }
+
+  &::after {
+    font-size: 22px;
+    font-weight: bold;
+  }
+
+  &:hover {
+    background: rgba(157, 68, 137, 0.4);
+    border-color: rgba(157, 68, 137, 0.6);
+    color: #ffffff;
+    transform: translateY(-50%) scale(1.1);
+  }
+}
+
+.swiper-button-prev {
+  left: 0;
+  transform: translateY(-50%) rotate(180deg);
+  
+  &:hover {
+    transform: translateY(-50%) rotate(180deg) scale(1.1);
+  }
+}
+
+.swiper-button-next {
+  right: 0;
+}
+@media (min-width: 881px) {
+  .swiper-button-next,
+  .swiper-button-prev {
+    display: none;
   }
 }
