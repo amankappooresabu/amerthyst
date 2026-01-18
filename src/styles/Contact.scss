@@ -122,8 +122,7 @@ $spacing-gap: 60px;
   }
 }
 
-// --- Media Query for Responsiveness ---
-@media (max-width: 768px) {
+@media (max-width: 900px) {
   .contact-page-container {
     .contact-content {
       flex-direction: column;
