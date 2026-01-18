@@ -295,7 +295,7 @@ export default function Categories() {
             </div>
           </div>
         </div>
-        <div className="flex items-center justify-center min-h-screen px-0 md:px-8">
+        <div className="flex items-center justify-center min-h-screen px-0 md:px-8 md:py-0 py-10">
           <div className="categories-next-card">
             <ContactPage />
           </div>

@@ -116,24 +116,40 @@ export default function Landing() {
 
   // GSAP ScrollTrigger Animation
   useEffect(() => {
-    if (containerRef.current) {
-      gsap.to(containerRef.current, {
+  // Reset scroll position on mount
+  window.scrollTo(0, 0);
+  
+  let scrollTriggerInstance: ScrollTrigger | null = null;
+  const element = containerRef.current; // Capture ref value
+
+  if (element) {
+    // Ensure element starts at initial position
+    gsap.set(element, { yPercent: 0 });
+    
+    scrollTriggerInstance = ScrollTrigger.create({
+      trigger: element,
+      start: 'top top',
+      end: 'bottom top',
+      scrub: true,
+      pin: false,
+      animation: gsap.to(element, {
         yPercent: -100,
         ease: 'none',
-        scrollTrigger: {
-          trigger: containerRef.current,
-          start: 'top top',
-          end: 'bottom top',
-          scrub: true,
-          pin: false,
-        },
-      });
-    }
+      }),
+    });
+  }
 
-    return () => {
-      ScrollTrigger.getAll().forEach(trigger => trigger.kill());
-    };
-  }, []);
+  return () => {
+    // Clear transforms before killing
+    if (element) {
+      gsap.set(element, { clearProps: "all" });
+    }
+    // Kill only this specific instance
+    if (scrollTriggerInstance) {
+      scrollTriggerInstance.kill();
+    }
+  };
+}, []);
 
   return (
     <div ref={containerRef} className="landing-container">
