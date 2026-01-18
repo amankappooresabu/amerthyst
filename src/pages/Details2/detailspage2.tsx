@@ -12,8 +12,8 @@ import { footerData2 } from "./constants/footerdata";
 export default function DetailsPage2() {
     return (
         <div>
-            <Section1Slider slides={slides} />
             <div className="content-container1">
+                <Section1Slider slides={slides} />
                 <DetailsContent productsData={botanicalProductsData}/>
                 <ExportLogistics exportCapabilities={botanicalExportCapabilities} />
                 <CallToAction mainheading={"Talk to Ingredient Specialist"} buttonGradient="from-green-700 via-green-600 to-green-700"/>

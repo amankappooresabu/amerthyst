@@ -12,13 +12,13 @@ import './detailspage1.scss'
 export default function Detailspage1 (){
   return (
     <div>
-      <Section1Slider slides={slides}/>
       <div className="content-container">
+        <Section1Slider slides={slides}/>
         <Details1Content productsData={productsData} />
         <ExportLogistics exportCapabilities={exportCapabilities} />
         <CallToAction mainheading={"Talk to Export Specialist"}/>
+        <Footer sections={footerData1.sections} backgroundGradient={footerData1.backgroundGradient} />
       </div>
-      <Footer sections={footerData1.sections} backgroundGradient={footerData1.backgroundGradient} />
     </div>
   )
 }

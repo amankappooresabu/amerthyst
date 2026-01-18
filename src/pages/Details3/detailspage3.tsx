@@ -13,8 +13,8 @@ import { footerData3 } from './constants/footerdata';
 export default function Detailspage3() {
   return (
     <div>
-        <Section1Slider slides={slides}/>
         <div className="content-container2">
+          <Section1Slider slides={slides}/>\
           <DetailsContent productsData={agroPlantationData}/>
           <ExportLogistics exportCapabilities={agroExportCapabilities} />
           <CallToAction mainheading={"Speak with Trade Desk"} buttonGradient="from-yellow-900 via-yellow-800 to-yellow-900"/>

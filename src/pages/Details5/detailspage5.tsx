@@ -12,8 +12,8 @@ import './detailspage5.scss'
 export default function Detailspage5() {
   return (
     <div>
-        <Section1Slider slides={slides}/>
         <div className="content-container4">
+            <Section1Slider slides={slides}/>
             <DetailsContent productsData={wellnessAyurvedaData} />
             <ExportLogistics exportCapabilities={wellnessExportCapabilities}/>
             <CallToAction mainheading={'Talk to Ayurveda Specialist'} buttonGradient='from-[#C19A6B] via-[#D2B48C] to-[#C19A6B]'/>

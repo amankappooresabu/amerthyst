@@ -13,8 +13,8 @@ import './detailspage4.scss'
 export default function Detailspage4() {
   return (
     <div>
-        <Section1Slider slides={slides}/>
         <div className="content-container3">
+            <Section1Slider slides={slides}/>
             <DetailsContent productsData={nutraceuticalProductsData}/>
             <ExportLogistics exportCapabilities={nutraceuticalExportCapabilities}/>
             <CallToAction mainheading={"Connect with Formulation Team"} buttonGradient='from-blue-900 via-blue-800 to-blue-900'/>

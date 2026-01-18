@@ -12,10 +12,10 @@ import './detailspage7.scss';
 export default function Detailspage7() {
   return (
     <div>
-        <Section1Slider slides={slides}/>
         <div className="content-container6">
-           <DetailsContent productsData={beautyPersonalCareData}/>
-           <ExportLogistics exportCapabilities={beautyExportCapabilities}/>
+            <Section1Slider slides={slides}/>
+            <DetailsContent productsData={beautyPersonalCareData}/>
+            <ExportLogistics exportCapabilities={beautyExportCapabilities}/>
             <CallToAction mainheading={"Speak with Beauty Supply Team"} buttonGradient="from-[#E85D8A] via-[#F482A8] to-[#E85D8A]"/>
         </div>
        <Footer sections={footerData7.sections} backgroundGradient={footerData7.backgroundGradient} />

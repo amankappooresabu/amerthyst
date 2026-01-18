@@ -12,8 +12,8 @@ import './detailspage8.scss';
 export default function Detailspage8() {
   return (
     <div>
-        <Section1Slider slides={slides}/>
         <div className="content-container7">
+             <Section1Slider slides={slides}/>
              <DetailsContent productsData={ecoSustainableData}/>
              <ExportLogistics exportCapabilities={ecoExportCapabilities}/>
              <CallToAction mainheading='Discuss Custom Eco Requirements' buttonGradient="from-[#81C784] via-[#A5D6A7] to-[#81C784]"/>
