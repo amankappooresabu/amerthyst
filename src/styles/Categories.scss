@@ -24,11 +24,53 @@
   box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
   display: flex;
   gap: 20px;
-  align-items: stretch; // Changed from flex-start
-  overflow: hidden; // Add this to prevent overflow
+  align-items: stretch;
+  overflow: hidden;
+  
+  // Add responsive scaling
+  @media (max-width: 1280px) {
+    width: 85%;
+    height: 460px;
+    padding: 25px;
+    gap: 18px;
+  }
+  
+  @media (max-width: 1024px) {
+    width: 90%;
+    height: 380px;
+    padding: 20px;
+    gap: 15px;
+  }
+  
+  @media (max-width: 768px) {
+    width: 95%;
+    height: 300px;
+    padding: 15px;
+    gap: 12px;
+  }
+  
+  @media (max-width: 640px) {
+    width: 95%;
+    height: 240px;
+    padding: 12px;
+    gap: 10px;
+  }
+  
+  @media (max-width: 480px) {
+    width: 95%;
+    height: 200px;
+    padding: 10px;
+    gap: 8px;
+  }
+}
+.right-side{
+  @media (max-width: 1024px) {
+    width: 25%;
+  }
 }
 .categories-text-box {
-  width: 200px;
+  width: 100%;
+  max-width: 200px;
   display: flex;
   flex-direction: column;
   padding: 10px;
@@ -39,11 +81,41 @@
   gap: 15px;
   flex-shrink: 0;
   flex: 1;
- 
+  
+  @media (max-width: 1280px) {
+    padding: 8px;
+    gap: 12px;
+    border-radius: 12px;
+  }
+  
+  @media (max-width: 1024px) {
+    padding: 7px;
+    gap: 10px;
+    border-radius: 10px;
+  }
+  
+  @media (max-width: 768px) {
+    padding: 6px;
+    gap: 8px;
+    border-radius: 8px;
+  }
+  
+  @media (max-width: 640px) {
+    padding: 5px;
+    gap: 6px;
+    border-radius: 6px;
+  }
+  
+  @media (max-width: 480px) {
+    padding: 4px;
+    gap: 5px;
+    border-radius: 5px;
+  }
 }
 .categories-bottom-box {
   height: 50%;
-  width: 200px;
+  width: 100%;
+  max-width: 200px;
   padding: 11px;
   background: rgba(255, 255, 255, 0.12);
   backdrop-filter: blur(40px);
@@ -55,23 +127,36 @@
   overflow-x: hidden;
   flex: 1;
 
-  /* Custom Scrollbar */
+  @media (max-width: 1280px) {
+    padding: 9px;
+    border-radius: 12px;
+  }
+  
+  @media (max-width: 1024px) {
+    padding: 7px;
+    border-radius: 10px;
+  }
+  
+  @media (max-width: 768px) {
+    padding: 6px;
+    border-radius: 8px;
+  }
+  
+  @media (max-width: 640px) {
+    padding: 5px;
+    border-radius: 6px;
+  }
+  
+  @media (max-width: 480px) {
+    padding: 4px;
+    border-radius: 5px;
+  }
+
   &::-webkit-scrollbar {
     width: 3px;
-  }
-
-  &::-webkit-scrollbar-track {
-    background: rgba(255, 255, 255, 0.05);
-    border-radius: 10px;
-  }
-
-  &::-webkit-scrollbar-thumb {
-    background: rgba(255, 255, 255, 0.3);
-    border-radius: 10px;
-    transition: background 0.3s ease;
-
-    &:hover {
-      background: rgba(255, 255, 255, 0.5);
+    
+    @media (max-width: 768px) {
+      width: 2px;
     }
   }
 }
@@ -85,6 +170,41 @@
   background: rgba(212, 212, 212, 0.28);
   border-radius: 10px;
   transition: all 0.3s ease;
+  
+  @media (max-width: 1280px) {
+    gap: 6px;
+    padding: 3px;
+    margin-bottom: 8px;
+    border-radius: 8px;
+  }
+  
+  @media (max-width: 1024px) {
+    gap: 5px;
+    padding: 3px;
+    margin-bottom: 6px;
+    border-radius: 7px;
+  }
+  
+  @media (max-width: 768px) {
+    gap: 4px;
+    padding: 2px;
+    margin-bottom: 5px;
+    border-radius: 5px;
+  }
+  
+  @media (max-width: 640px) {
+    gap: 3px;
+    padding: 2px;
+    margin-bottom: 4px;
+    border-radius: 4px;
+  }
+  
+  @media (max-width: 480px) {
+    gap: 2px;
+    padding: 1px;
+    margin-bottom: 3px;
+    border-radius: 3px;
+  }
 
   &:hover {
     background: rgba(255, 255, 255, 0.15);
@@ -97,6 +217,36 @@
   border-radius: 8px;
   object-fit: cover;
   flex-shrink: 0;
+  
+  @media (max-width: 1280px) {
+    width: 42px;
+    height: 42px;
+    border-radius: 7px;
+  }
+  
+  @media (max-width: 1024px) {
+    width: 35px;
+    height: 35px;
+    border-radius: 6px;
+  }
+  
+  @media (max-width: 768px) {
+    width: 28px;
+    height: 28px;
+    border-radius: 5px;
+  }
+  
+  @media (max-width: 640px) {
+    width: 22px;
+    height: 22px;
+    border-radius: 4px;
+  }
+  
+  @media (max-width: 480px) {
+    width: 18px;
+    height: 18px;
+    border-radius: 3px;
+  }
 }
 
 .category-item-name {
@@ -105,6 +255,26 @@
   color: #ffffff;
   font-weight: 400;
   flex: 1;
+  
+  @media (max-width: 1280px) {
+    font-size: 0.55rem;
+  }
+  
+  @media (max-width: 1024px) {
+    font-size: 0.5rem;
+  }
+  
+  @media (max-width: 768px) {
+    font-size: 0.42rem;
+  }
+  
+  @media (max-width: 640px) {
+    font-size: 0.35rem;
+  }
+  
+  @media (max-width: 480px) {
+    font-size: 0.3rem;
+  }
 }
 .categories-right-image {
   position: absolute;
@@ -131,6 +301,35 @@
   box-shadow: 0 4px 16px 0 rgba(0, 0, 0, 0.2);
   position: relative; 
   overflow: hidden;
+  @media (max-width: 1280px) {
+    max-height: 180px;
+    padding: 18px;
+    border-radius: 12px;
+  }
+  
+  @media (max-width: 1024px) {
+    max-height: 150px;
+    padding: 15px;
+    border-radius: 10px;
+  }
+  
+  @media (max-width: 768px) {
+    max-height: 120px;
+    padding: 12px;
+    border-radius: 8px;
+  }
+  
+  @media (max-width: 640px) {
+    max-height: 95px;
+    padding: 10px;
+    border-radius: 6px;
+  }
+  
+  @media (max-width: 480px) {
+    max-height: 80px;
+    padding: 8px;
+    border-radius: 5px;
+  }
   .categories-right-heading {
    margin-top: 3.0rem;
    font-family: 'Montserrat', sans-serif;
@@ -139,6 +338,12 @@
    color: #ffffff;
    margin-bottom: 0.5rem;
    letter-spacing: 0.5px;
+}
+.right-side-image{
+  border-radius: 15px;
+  @media (max-width: 765px) {
+    border-radius: 1px;
+  }
 }
 
 .categories-right-description {
@@ -205,6 +410,34 @@
   color: #ffffff;
   text-align: left;
   letter-spacing: 1px;
+  
+  @media (max-width: 1280px) {
+    font-size: 1.2rem;
+  }
+  
+  @media (max-width: 1024px) {
+    font-size: 1rem;
+    letter-spacing: 0.8px;
+  }
+  
+  @media (max-width: 768px) {
+    font-size: 0.8rem;
+    letter-spacing: 0.6px;
+  }
+  
+  @media (max-width: 640px) {
+    font-size: 0.65rem;
+    letter-spacing: 0.4px;
+  }
+  
+  @media (max-width: 480px) {
+    font-size: 0.55rem;
+    letter-spacing: 0.3px;
+  }
+  @media (max-width: 400px) {
+    font-size: 0.45rem;
+    letter-spacing: 0.3px;
+  }
 }
 
 .categories-description {
@@ -215,6 +448,33 @@
   color: #e5e5e5;
   font-weight: 400;
   text-align: left;
+  
+  @media (max-width: 1280px) {
+    font-size: 0.55rem;
+  }
+  
+  @media (max-width: 1024px) {
+    font-size: 0.5rem;
+    line-height: 1.5;
+  }
+  
+  @media (max-width: 768px) {
+    font-size: 0.45rem;
+    line-height: 1.4;
+  }
+  
+  @media (max-width: 640px) {
+    font-size: 0.4rem;
+    line-height: 1.3;
+  }
+  
+  @media (max-width: 480px) {
+    font-size: 0.35rem;
+    line-height: 1.2;
+  }
+  @media (max-width: 440px) {
+    font-size: 0.25rem;
+  }
 }
 .categories-section {
   display: flex;
@@ -224,6 +484,30 @@
   min-height: 0; // Critical for flex child
   overflow: hidden;
   max-height: 250px;
+    @media (max-width: 1280px) {
+    gap: 12px;
+    max-height: 220px;
+  }
+  
+  @media (max-width: 1024px) {
+    gap: 10px;
+    max-height: 180px;
+  }
+  
+  @media (max-width: 768px) {
+    gap: 8px;
+    max-height: 140px;
+  }
+  
+  @media (max-width: 640px) {
+    gap: 6px;
+    max-height: 110px;
+  }
+  
+  @media (max-width: 480px) {
+    gap: 5px;
+    max-height: 90px;
+  }
   .swiper {
     margin-left: auto;
     margin-right: auto;
@@ -257,9 +541,33 @@
   font-weight: 600;
   color: #ffffff;
   letter-spacing: 0.5px;
+  
+  @media (max-width: 1280px) {
+    font-size: 1.3rem;
+  }
+  
+  @media (max-width: 1024px) {
+    font-size: 1.1rem;
+    letter-spacing: 0.4px;
+  }
+  
+  @media (max-width: 768px) {
+    font-size: 0.9rem;
+    letter-spacing: 0.3px;
+  }
+  
+  @media (max-width: 640px) {
+    font-size: 0.7rem;
+    letter-spacing: 0.2px;
+  }
+  
+  @media (max-width: 480px) {
+    font-size: 0.6rem;
+    letter-spacing: 0.2px;
+  }
 }
 .category-card {
-  width: 100%; // Take full width of the slide
+  width: 100%;
   padding: 4px;
   background: rgba(255, 255, 255, 0.1);
   backdrop-filter: blur(15px);
@@ -271,6 +579,31 @@
   align-items: center;
   text-align: center;
   height: 100%;
+  
+  @media (max-width: 1280px) {
+    padding: 3px;
+    border-radius: 10px;
+  }
+  
+  @media (max-width: 1024px) {
+    padding: 3px;
+    border-radius: 8px;
+  }
+  
+  @media (max-width: 768px) {
+    padding: 2px;
+    border-radius: 6px;
+  }
+  
+  @media (max-width: 640px) {
+    padding: 2px;
+    border-radius: 5px;
+  }
+  
+  @media (max-width: 480px) {
+    padding: 1px;
+    border-radius: 4px;
+  }
 
   &:hover {
     background: rgba(255, 255, 255, 0.15);
@@ -294,6 +627,26 @@
   color: #e4e4e4;
   font-weight: 400;
   text-transform: uppercase;
+  
+  @media (max-width: 1280px) {
+    font-size: 0.65rem;
+  }
+  
+  @media (max-width: 1024px) {
+    font-size: 0.6rem;
+  }
+  
+  @media (max-width: 768px) {
+    font-size: 0.5rem;
+  }
+  
+  @media (max-width: 640px) {
+    font-size: 0.4rem;
+  }
+  
+  @media (max-width: 480px) {
+    font-size: 0.35rem;
+  }
 }
 .gradient-overlay {
   position: absolute;

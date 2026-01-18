@@ -104,16 +104,24 @@ export default function Categories() {
       speed: 600,
       breakpoints: {
         320: {
-          slidesPerView: 1,
-          spaceBetween: 10
+          slidesPerView: 4,
+          spaceBetween: 5
+        },
+        480: {
+          slidesPerView: 4,
+          spaceBetween: 6
         },
         640: {
-          slidesPerView: 2,
-          spaceBetween: 12
+          slidesPerView: 4,
+          spaceBetween: 8
+        },
+        768: {
+          slidesPerView: 4,
+          spaceBetween: 10
         },
         1024: {
-          slidesPerView: 3,
-          spaceBetween: 15
+          slidesPerView: 4,
+          spaceBetween: 12
         },
         1280: {
           slidesPerView: 4,
@@ -186,10 +194,10 @@ useEffect(() => {
     <div className="categories-content-wrapper">
       {/* First section */}
       
-      <div className="flex items-center justify-center min-h-screen px-8">
+      <div className="flex items-center justify-center py-10 sm:py-20 md:py-30  px-8">
         <div className="categories-content">
           {/* All your existing content */}
-          <div className='top-1/2 h-full ' style={{ display: 'flex', flexDirection: 'column', gap: '20px',  flexShrink: 0 }}>
+          <div className='top-1/2 h-full right-side ' style={{ display: 'flex', flexDirection: 'column', gap: '20px',  flexShrink: 0 }}>
             <div className="categories-text-box">
               <h2 className="categories-heading">
                 Why Choose Our <br/> Products ?
@@ -215,6 +223,7 @@ useEffect(() => {
       key={slide.id}
       src={slide.image} 
       alt={`Slide ${slide.id}`}
+      className='right-side-image'
       style={{
         position: 'absolute',
         top: 0,
@@ -222,7 +231,6 @@ useEffect(() => {
         width: '100%',
         height: '100%',
         objectFit: 'cover',
-        borderRadius: '15px',
         opacity: currentSlide === index ? 1 : 0,
         transition: 'opacity 0.8s ease-in-out',
       }}
