@@ -1,7 +1,19 @@
 .content-container {
-    position: relative;
-    min-height: 100vh;
-    background: #ededed url('/theme_globe/global_trade.webp') no-repeat center center fixed;
-    background-size: contain; 
-    z-index: 1;
+  position: relative;
+  min-height: 100vh;
+  background: #ededed; 
+  z-index: 1;
+  
+  &::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background: url('/theme_globe/global_trade.webp') no-repeat center center;
+    background-size: contain;
+    z-index: -1; // Behind content
+    pointer-events: none;
   }
+}
