@@ -18,9 +18,8 @@ export default function Detailspage6() {
             <DetailsContent productsData={marineProteinData}/>
             <ExportLogistics exportCapabilities={marineExportCapabilities}/>
             <CallToAction mainheading={"Contact Cold-Chain Team"} buttonGradient='from-blue-950 via-blue-900 to-blue-950'/>
+            <Footer sections={footerData6.sections} backgroundGradient={footerData6.backgroundGradient} />
         </div>
-         <Footer sections={footerData6.sections} backgroundGradient={footerData6.backgroundGradient} />
-        
     </div>
   )
 }

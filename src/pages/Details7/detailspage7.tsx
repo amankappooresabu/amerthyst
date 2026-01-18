@@ -17,8 +17,8 @@ export default function Detailspage7() {
             <DetailsContent productsData={beautyPersonalCareData}/>
             <ExportLogistics exportCapabilities={beautyExportCapabilities}/>
             <CallToAction mainheading={"Speak with Beauty Supply Team"} buttonGradient="from-[#E85D8A] via-[#F482A8] to-[#E85D8A]"/>
+            <Footer sections={footerData7.sections} backgroundGradient={footerData7.backgroundGradient} />
         </div>
-       <Footer sections={footerData7.sections} backgroundGradient={footerData7.backgroundGradient} />
     </div>
   )
 }

@@ -17,8 +17,8 @@ export default function Detailspage5() {
             <DetailsContent productsData={wellnessAyurvedaData} />
             <ExportLogistics exportCapabilities={wellnessExportCapabilities}/>
             <CallToAction mainheading={'Talk to Ayurveda Specialist'} buttonGradient='from-[#C19A6B] via-[#D2B48C] to-[#C19A6B]'/>
+            <Footer sections={footerData5.sections} backgroundGradient={footerData5.backgroundGradient} /> 
         </div>
-        <Footer sections={footerData5.sections} backgroundGradient={footerData5.backgroundGradient} /> 
     </div>
   )
 }

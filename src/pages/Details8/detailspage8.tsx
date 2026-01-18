@@ -17,8 +17,8 @@ export default function Detailspage8() {
              <DetailsContent productsData={ecoSustainableData}/>
              <ExportLogistics exportCapabilities={ecoExportCapabilities}/>
              <CallToAction mainheading='Discuss Custom Eco Requirements' buttonGradient="from-[#81C784] via-[#A5D6A7] to-[#81C784]"/>
+             <Footer sections={footerData8.sections} backgroundGradient={footerData8.backgroundGradient}/>
         </div>
-        <Footer sections={footerData8.sections} backgroundGradient={footerData8.backgroundGradient} />    
     </div>
   )
 }
