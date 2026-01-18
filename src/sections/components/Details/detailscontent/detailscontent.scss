@@ -51,10 +51,33 @@
     -webkit-backface-visibility: hidden;
     border-radius: 16px;
     overflow: hidden;
+    transition: opacity 0.4s;
   }
 
   .card-back {
     transform: rotateY(180deg);
+  }
+  &.flipped {
+    .card-front {
+      opacity: 0;
+      pointer-events: none;
+    }
+    
+    .card-back {
+      opacity: 1;
+    }
+  }
+
+  // When not flipped, show front and hide back
+  &:not(.flipped) {
+    .card-front {
+      opacity: 1;
+    }
+    
+    .card-back {
+      opacity: 0;
+      pointer-events: none;
+    }
   }
 }
 
