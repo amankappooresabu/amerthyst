@@ -9,6 +9,13 @@
     margin-bottom: 4rem;
     color: #2c2c2c;
     text-transform: uppercase;
+    @media (max-width: 1024px) {
+    font-size: 2.5rem;
+  
+}
+    @media (max-width: 768px) {
+      font-size: 2rem;
+    }
   }
 
   &__grid {
@@ -22,11 +29,19 @@
     @media (max-width: 1024px) {
       grid-template-columns: repeat(2, 1fr);
       gap: 2rem;
+      max-width: 900px; 
+    }
+    @media (max-width: 763px) {
+      grid-template-columns: repeat(3, 1fr);
+      max-width: 600px; 
+    }
+    @media (max-width: 650px) {
+      grid-template-columns: repeat(2, 1fr);
+      max-width: 400px; 
+      padding: 0 0.75rem;
     }
 
-    @media (max-width: 640px) {
-      grid-template-columns: 1fr;
-      gap: 2rem;
-    }
+
+    
   }
 }
