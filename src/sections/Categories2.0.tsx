@@ -155,7 +155,7 @@ useEffect(() => {
     {/* Sticky wrapper for fixed elements */}
     <div className="categories-sticky-wrapper">
       {/* Left Image */}
-      <div className="absolute bottom-0 left-0 w-54 h-54 z-10"
+      <div className="hidden lg:block absolute bottom-0 left-0 w-54 h-54 z-10"
         style={{
           transform: isVisible ? 'translate(0, 0)' : 'translate(-100%, 100%)',
           opacity: isVisible ? 1 : 0,
@@ -170,7 +170,7 @@ useEffect(() => {
       </div>
 
       {/* Right Image */}
-      <div className="absolute bottom-0 right-0 w-54 h-54 z-10"
+      <div className="hidden lg:block absolute bottom-0 right-0 w-54 h-54 z-10"
         style={{
           transform: isVisible ? 'translate(0, 0)' : 'translate(100%, 100%)',
           opacity: isVisible ? 1 : 0,
@@ -194,7 +194,7 @@ useEffect(() => {
     <div className="categories-content-wrapper">
       {/* First section */}
       
-      <div className="flex items-center justify-center py-10 sm:py-20 md:py-30  px-8">
+      <div className="flex items-center justify-center py-10 sm:py-20 md:py-30 px-2 md:px-8">
         <div className="categories-content">
           {/* All your existing content */}
           <div className='top-1/2 h-full right-side ' style={{ display: 'flex', flexDirection: 'column', gap: '20px',  flexShrink: 0 }}>
@@ -236,20 +236,7 @@ useEffect(() => {
       }}
     />
   ))}
-              {/* <img 
-                src="/greyglobe.png" 
-                alt="" 
-                className="categories-right-image"
-              />
-              <h3 className="categories-right-heading">
-                Global Taste & Culinary Exports
-              </h3>
-              <p className="categories-right-description">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.
-              </p>
-              <button className="learn-more-button">
-                Learn More
-              </button> */}
+             
             </div>
 
             <div className="categories-section">
