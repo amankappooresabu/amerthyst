@@ -6,9 +6,22 @@
 .bg-black1 {
   position: relative;
   min-height: 100vh;
-  background: #000000 url('/category_bg.webp') no-repeat center center fixed;
-  background-size: 50%; // or adjust to contain/cover as needed
+  background: #000000; // Just solid color
   z-index: 1;
+  
+  // Add pseudo-element for fixed background
+  &::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background: url('/category_bg.webp') no-repeat center center;
+    background-size: 50%;
+    z-index: -1; // Behind content
+    pointer-events: none;
+  }
 }
 
 .categories-content {
