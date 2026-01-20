@@ -27,7 +27,6 @@ export default function Section1Slider({slides} :Section1SliderProps) {
 
   return (
     <section className="w-full h-full min-h-screen relative overflow-hidden ">
-      {/* Slides */}
       {slides.map((slide, index) => (
         <div
           key={slide.id}
@@ -37,7 +36,7 @@ export default function Section1Slider({slides} :Section1SliderProps) {
           <img
             src={slide.image}
             alt={slide.title}
-            className="object-cover w-full h-full"
+            className="object-cover w-full h-full bg-gray-700"
           />
           <div className="absolute inset-0 bg-black/40" />
         </div>

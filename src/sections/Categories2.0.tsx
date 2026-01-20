@@ -142,7 +142,7 @@ export default function Categories() {
   }, []);
 
   return (
-    <div ref={sectionRef} className="bg-black bg-black1 relative z-1 " >
+    <div ref={sectionRef} className=" relative z-1 " >
       <div
         className="absolute top-0 left-0 w-full pointer-events-none"
         style={{
@@ -154,7 +154,7 @@ export default function Categories() {
 
       <div className="categories-sticky-wrapper">
         {/* Left Image */}
-        <div className="hidden lg:block absolute bottom-0 left-0 w-54 h-54 z-10"
+        <div className="hidden lg:block fixed bottom-0 left-0 w-54 h-54 z-10"
           style={{
             transform: isVisible ? 'translate(0, 0)' : 'translate(-100%, 100%)',
             opacity: isVisible ? 1 : 0,
@@ -169,7 +169,7 @@ export default function Categories() {
         </div>
 
         {/* Right Image */}
-        <div className="hidden lg:block absolute bottom-0 right-0 w-54 h-54 z-10"
+        <div className="hidden lg:block fixed bottom-0 right-0 w-54 h-54 z-10"
           style={{
             transform: isVisible ? 'translate(0, 0)' : 'translate(100%, 100%)',
             opacity: isVisible ? 1 : 0,
@@ -182,9 +182,6 @@ export default function Categories() {
             className="w-full h-full object-cover rounded-tl-3xl shadow-2xl"
           />
         </div>
-
-
-
         <div className="gradient-overlay" />
       </div>
 

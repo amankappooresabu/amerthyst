@@ -36,7 +36,7 @@ function App() {
       <LogoNav/>
        <Routes>
        <Route path="/" element={
-          <div style={{ position: 'relative', minHeight: '100vh' }}>
+          <div className="global-background-wrapper" >
             <Landing1/>
             <Categories/>
           </div>

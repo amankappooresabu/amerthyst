@@ -1,18 +1,14 @@
 import { useEffect, useRef, useMemo } from 'react';
 import Swiper from 'swiper';
 import { Autoplay, EffectCoverflow , Navigation} from 'swiper/modules';
-import gsap from 'gsap';
-import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import '../styles/Landing.scss';
 import { cardData } from '../constants/CardData';
 import { useNavigate } from 'react-router-dom';
 
 
-gsap.registerPlugin(ScrollTrigger);
 
 export default function Landing() {
   const swiperRef = useRef(null);
-  const containerRef = useRef(null);
   const navigate = useNavigate();
   const handleLogoClick = (cardId: string) => {
   navigate(`${cardId}`);
@@ -114,45 +110,10 @@ export default function Landing() {
   }
 }, []);
 
-  // GSAP ScrollTrigger Animation
-  useEffect(() => {
-  // Reset scroll position on mount
-  window.scrollTo(0, 0);
-  
-  let scrollTriggerInstance: ScrollTrigger | null = null;
-  const element = containerRef.current; // Capture ref value
-
-  if (element) {
-    // Ensure element starts at initial position
-    gsap.set(element, { yPercent: 0 });
-    
-    scrollTriggerInstance = ScrollTrigger.create({
-      trigger: element,
-      start: 'top top',
-      end: 'bottom top',
-      scrub: true,
-      pin: false,
-      animation: gsap.to(element, {
-        yPercent: -100,
-        ease: 'none',
-      }),
-    });
-  }
-
-  return () => {
-    // Clear transforms before killing
-    if (element) {
-      gsap.set(element, { clearProps: "all" });
-    }
-    // Kill only this specific instance
-    if (scrollTriggerInstance) {
-      scrollTriggerInstance.kill();
-    }
-  };
-}, []);
+ 
 
   return (
-    <div ref={containerRef} className="landing-container">
+    <div  className="landing-container">
       <h1 className="brand-title">Purple Sky Trade</h1>
       
       <div className="carousel-wrapper">

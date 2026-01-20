@@ -8,3 +8,22 @@ body {
   margin: 0;
   padding: 0;
 }
+.global-background-wrapper {
+  position: relative;
+  min-height: 100vh;
+  background: #000000;
+  z-index: 1;
+  
+  &::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background: url('/category_bg.webp') no-repeat center center;
+    background-size: 50%;
+    z-index: -1;
+    pointer-events: none;
+  }
+}
