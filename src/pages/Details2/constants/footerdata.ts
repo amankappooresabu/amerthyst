@@ -32,6 +32,6 @@ export const footerData2 = {
       }
     }
   ],
-  backgroundGradient: "from-green-700 via-green-600 to-green-700"  
+  backgroundGradient: "from-black via-gray-900 to-gray-800"  
 };
 
