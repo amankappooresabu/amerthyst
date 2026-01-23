@@ -15,14 +15,14 @@ export default function CallToAction({
         </h2>
         
         <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-          <button className="relative bg-white text-black font-semibold px-8 py-4 rounded-lg overflow-hidden min-w-[200px] group transition-all duration-300">
+          <button className="relative bg-white text-black font-semibold px-8 py-4 rounded-lg overflow-hidden min-w-50 group transition-all duration-300">
             <span className={`absolute -inset-full bg-linear-to-br ${buttonGradient} translate-x-full translate-y-full group-hover:translate-x-0 group-hover:translate-y-0 transition-transform duration-700 ease-in-out origin-top-left`}></span>
             <span className="relative z-10 group-hover:text-white transition-colors duration-300">
               Talk Now
             </span>
           </button>
           
-          <button className="relative bg-transparent border-2 border-white text-white font-semibold px-8 py-4 rounded-lg overflow-hidden min-w-[200px] group">
+          <button className="relative bg-transparent border-2 border-white text-white font-semibold px-8 py-4 rounded-lg overflow-hidden min-w-50 group">
             <span className="absolute -inset-full bg-white translate-x-full translate-y-full group-hover:translate-x-0 group-hover:translate-y-0 transition-transform duration-700 ease-in-out origin-top-left"></span>
             <span className="relative z-10 group-hover:text-black transition-colors duration-300">
               Send us a message

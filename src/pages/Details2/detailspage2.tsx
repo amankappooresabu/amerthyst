@@ -14,8 +14,8 @@ export default function DetailsPage2() {
         <div>
             <div className="content-container1">
                 <Section1Slider slides={slides} />
-                <DetailsContent productsData={botanicalProductsData}/>
-                <ExportLogistics exportCapabilities={botanicalExportCapabilities} />
+                <DetailsContent productsData={botanicalProductsData} headingColor="text-[#fefefe]"/>
+                <ExportLogistics exportCapabilities={botanicalExportCapabilities} headingColor="text-[#fefefe]"/>
                 <CallToAction mainheading={"Talk to Ingredient Specialist"} buttonGradient="from-green-700 via-green-600 to-green-700"/>
                 <Footer sections={footerData2.sections} backgroundGradient={footerData2.backgroundGradient}/>
             </div>

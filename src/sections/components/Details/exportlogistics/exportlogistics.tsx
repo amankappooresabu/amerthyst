@@ -10,12 +10,13 @@ export interface ExportCapability {
 
 interface ExportLogisticsProps {
   exportCapabilities: ExportCapability[];
+  headingColor?: string;
 }
 
-export default function ExportLogistics({ exportCapabilities }: ExportLogisticsProps) {
+export default function ExportLogistics({ exportCapabilities, headingColor='text-[2c2c2c]' }: ExportLogisticsProps) {
   return (
     <section className="export-logistics">
-      <h2 className="section-title">Export Capabilities</h2>
+      <h2 className={`section-title ${headingColor}`}>Export Capabilities</h2>
       <div className="export-logistics__grid">
         {exportCapabilities.map((capability) => (
           <ExportCard

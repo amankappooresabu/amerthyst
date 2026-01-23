@@ -16,7 +16,7 @@ export default function Detailspage1 (){
         <Section1Slider slides={slides}/>
         <Details1Content productsData={productsData} />
         <ExportLogistics exportCapabilities={exportCapabilities} />
-        <CallToAction mainheading={"Talk to Export Specialist"}/>
+        <CallToAction mainheading={"Talk to Export Specialist"} buttonGradient='from-[#B8860B] via-[#DAA520] to-[#B8860B]'/>
         <Footer sections={footerData1.sections} backgroundGradient={footerData1.backgroundGradient} />
       </div>
     </div>

@@ -12,9 +12,10 @@ export interface ProductData {
 
 interface DetailsContentProps {
   productsData: ProductData[]
+  headingColor?: string
 }
 
-export default function DetailsContent({ productsData }: DetailsContentProps) {
+export default function DetailsContent({ productsData, headingColor='text-[#2c2c2c]' }: DetailsContentProps) {
   const [flippedCards, setFlippedCards] = useState<Set<number>>(new Set())
 
   const handleExplore = (cardId: number) => {
@@ -32,7 +33,7 @@ export default function DetailsContent({ productsData }: DetailsContentProps) {
   return (
     <div className="details1-content">
       <div className="content-wrapper">
-        <h2 className="section-title">Our Products</h2>
+        <h2 className={`section-title ${headingColor}`}>Our Products</h2>
 
         <div className="products-grid">
           {productsData.map((item) => (
